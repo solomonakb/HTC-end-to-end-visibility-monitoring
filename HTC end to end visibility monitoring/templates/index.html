@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTC Monitoring | Ethiopian Airlines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">✈️ Ethiopian Airlines</div>
+    <div class="header-titles">
+      <h1>HTC End-to-End Visibility Monitoring</h1>
+      <h2>Aircraft Maintenance Program & Task Card Engineering (MPTC)</h2>
+    </div>
+    <button id="btn-theme-toggle" class="btn-theme-toggle" title="Toggle theme" style="margin-left: auto;">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </header>
+
+  <div class="dashboard-stats" id="dashboard-stats">
+    <div class="kpi-card" id="card-total">
+      <div class="kpi-icon">📊</div>
+      <div class="kpi-label">Total Events</div>
+      <div class="kpi-value" id="kpi-total">0</div>
+      <div class="kpi-trend">All recorded movements</div>
+    </div>
+    <div class="kpi-card" id="card-install">
+      <div class="kpi-icon">✅</div>
+      <div class="kpi-label">Installations</div>
+      <div class="kpi-value" id="kpi-install">0</div>
+      <div class="kpi-trend">Parts installed</div>
+    </div>
+    <div class="kpi-card" id="card-remove">
+      <div class="kpi-icon">🔧</div>
+      <div class="kpi-label">Removals</div>
+      <div class="kpi-value" id="kpi-remove">0</div>
+      <div class="kpi-trend">Parts removed</div>
+    </div>
+    <div class="kpi-card critical" id="card-xxx">
+      <div class="kpi-icon">🔴</div>
+      <div class="kpi-label">XXX S/N Alerts</div>
+      <div class="kpi-value" id="kpi-xxx">0</div>
+      <div class="kpi-trend">Action required</div>
+    </div>
+    <div class="kpi-card" id="card-empty">
+      <div class="kpi-icon">⚠️</div>
+      <div class="kpi-label">Empty Config Slots</div>
+      <div class="kpi-value" id="kpi-empty">0</div>
+      <div class="kpi-trend">Missing components</div>
+    </div>
+  </div>
+
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-target="tab-all-events">All Events</button>
+    <button class="tab-btn" data-target="tab-alert-a">Alert A (Install/Remove)</button>
+    <button class="tab-btn" data-target="tab-alert-b">Alert B (XXX S/N)</button>
+    <button class="tab-btn" data-target="tab-alert-c">Alert C (MMC)</button>
+    <button class="tab-btn" data-target="tab-resolutions">Resolution Tracker</button>
+    <button class="tab-btn" data-target="tab-risk-register">Risk Register</button>
+    <button class="tab-btn" data-target="tab-stakeholders">Stakeholders</button>
+  </nav>
+
+  <div class="filters-bar" id="filters-bar">
+    <div class="filter-group">
+      <label for="fleet-filter">Fleet</label>
+      <select id="fleet-filter">
+        <option value="">All Fleets</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="event-type-filter">Event Type</label>
+      <select id="event-type-filter">
+        <option value="">All</option>
+        <option value="INSTALL">INSTALL</option>
+        <option value="REMOVE">REMOVE</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="bom-filter">Assmbl BOM (Config Slot)</label>
+      <input type="text" id="bom-filter" placeholder="e.g. 21-51...">
+    </div>
+    <div class="filter-group">
+      <label for="part-group-filter">Part Group</label>
+      <input type="text" id="part-group-filter" placeholder="e.g. MODULE...">
+    </div>
+    <div class="filter-group">
+      <label for="date-from">Date From</label>
+      <input type="date" id="date-from">
+    </div>
+    <div class="filter-group">
+      <label for="date-to">Date To</label>
+      <input type="date" id="date-to">
+    </div>
+    <div class="filter-group search-group">
+      <label for="search-input">Search</label>
+      <input type="text" id="search-input" placeholder="Part No, S/N, Barcode...">
+    </div>
+    <div class="filter-actions">
+      <button id="btn-apply-filters" class="btn btn-primary">Apply Filters</button>
+      <button id="btn-export-csv" class="btn btn-secondary">Export CSV</button>
+      <button id="btn-fetch-reports" class="btn btn-gold" title="Scan \\svhqftp03\HCT for new bi-weekly reports">📡 Fetch Reports</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="tab-content active" id="tab-all-events">
+      <div class="table-container">
+        <table id="events-table">
+          <thead>
+            <tr>
+              <th>Event Date</th>
+              <th>Event Type</th>
+              <th>Aircraft</th>
+              <th>Config Slot Code</th>
+              <th>Config Slot Name</th>
+              <th>Part No</th>
+              <th>Part Description</th>
+              <th>Serial Number</th>
+              <th>Status</th>
+              <th>Barcode</th>
+              <th>Performed By</th>
+            </tr>
+          </thead>
+          <tbody id="events-tbody">
+            <!-- Data loaded via JS -->
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination" id="pagination">
+        <!-- Pagination controls loaded via JS -->
+      </div>
+    </div>
+
+    <div class="tab-content hidden" id="tab-alert-a">
+      <div class="alert-info-banner alert-a-banner">
+        <h3>Alert A — HTC Part Install / Remove Monitoring</h3>
+        <p>Real-time visibility of all HTC part movements on TRK-class HT configuration slots</p>
+      </div>
+      <div class="alert-a-summary" id="alert-a-summary"></div>
+      <div class="table-container">
+        <table id="alert-a-table">
+          <thead>
+            <tr>
+              <th>Event Date</th>
+              <th>Event Type</th>
+              <th>Aircraft</th>
+              <th>Config Slot Code</th>
+              <th>Config Slot Name</th>
+              <th>Part No</th>
+              <th>Part Description</th>
+              <th>Serial Number</th>
+              <th>Status</th>
+              <th>Barcode</th>
+              <th>Performed By</th>
+            </tr>
+          </thead>
+          <tbody id="alert-a-tbody">
+            <!-- Data loaded via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tab-content hidden" id="tab-alert-b">
+      <div class="alert-info-banner alert-b-banner">
+        <h3>⚠️ Alert B — HTC XXX Serial Number Monitoring [ACTION REQUIRED]</h3>
+        <p>Parts installed with placeholder serial numbers requiring immediate resolution</p>
+      </div>
+      <div class="alert-b-summary" id="alert-b-summary"></div>
+      
+      <div class="action-checklist">
+        <h4>Required Actions (per MPTC Procedure §8.3):</h4>
+        <ol>
+          <li>Identify actual S/N from work order, CRC/EASA Form 1, or FAA 8130-3</li>
+          <li>Update serial number in Maintenix immediately</li>
+          <li>Verify and activate associated Hard Time maintenance task(s)</li>
+          <li>Confirm resolution within 24 hours or before next revenue flight</li>
+        </ol>
+      </div>
+
+      <div class="table-container">
+        <table id="alert-b-table">
+          <thead>
+            <tr>
+              <th>⚠️ Priority</th>
+              <th>Event Date</th>
+              <th>Aircraft</th>
+              <th>Config Slot</th>
+              <th>Part No</th>
+              <th>Part Desc</th>
+              <th>Serial Number</th>
+              <th>Resolution Deadline</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="alert-b-tbody">
+            <!-- Data loaded via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tab-content hidden" id="tab-alert-c">
+      <div class="alert-info-banner" style="border-left: 4px solid var(--color-danger);">
+        <h3>🚨 Alert C — Missing Mandatory Component (MMC)</h3>
+        <p>Hard Time Components removed and not reinstalled within 7 days.</p>
+      </div>
+      <div class="alert-c-summary" id="alert-c-summary"></div>
+      
+      <div class="table-container">
+        <table id="alert-c-table">
+          <thead>
+            <tr>
+              <th>Removal Date</th>
+              <th>Aircraft</th>
+              <th>Config Slot</th>
+              <th>Part No</th>
+              <th>Part Group</th>
+              <th>Barcode</th>
+              <th>Performed By</th>
+              <th>Days Overdue</th>
+              <th>Reinstall Date</th>
+              <th>Reinstall S/N</th>
+            </tr>
+          </thead>
+          <tbody id="alert-c-tbody">
+            <!-- Data loaded via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tab-content hidden" id="tab-resolutions">
+      <div class="tab-header-flex">
+        <div>
+          <h3>Resolution Tracking Register</h3>
+          <p>Track and manage Alert B (XXX S/N) resolution actions per §8.3</p>
+        </div>
+        <button id="btn-new-resolution" class="btn btn-primary">+ New Resolution</button>
+      </div>
+      <div class="table-container">
+        <table id="resolutions-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Alert Date</th>
+              <th>Aircraft</th>
+              <th>Config Slot</th>
+              <th>Part No</th>
+              <th>Original S/N</th>
+              <th>Resolved S/N</th>
+              <th>Engineer</th>
+              <th>Resolution Date</th>
+              <th>Status</th>
+              <th>Notes</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="resolutions-tbody">
+            <!-- Data loaded via JS -->
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Resolution Form Modal -->
+      <div class="modal hidden" id="resolution-modal">
+        <div class="modal-content">
+          <h3>Log Resolution</h3>
+          <form id="resolution-form">
+            <input type="hidden" id="res-id">
+            <div class="form-grid">
+              <label>Event Barcode<input type="text" id="res-barcode" required></label>
+              <label>Aircraft<input type="text" id="res-aircraft" required></label>
+              <label>Config Slot<input type="text" id="res-config-slot" required></label>
+              <label>Part Number<input type="text" id="res-part-no" required></label>
+              <label>Original S/N<input type="text" id="res-original-sn" required></label>
+              <label>Resolved S/N<input type="text" id="res-resolved-sn"></label>
+              <label>Engineer Responsible<input type="text" id="res-engineer" required></label>
+              <label>Resolution Date<input type="date" id="res-date"></label>
+              <label class="full-width">Status
+                <select id="res-status">
+                  <option>PENDING</option>
+                  <option>RESOLVED</option>
+                </select>
+              </label>
+              <label class="full-width">Notes<textarea id="res-notes" rows="3"></textarea></label>
+            </div>
+            <div class="modal-actions">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" id="btn-cancel-resolution">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content hidden" id="tab-risk-register">
+      <h3>Risk Register</h3>
+      <table class="info-table">
+        <thead>
+          <tr>
+            <th>Risk ID</th>
+            <th>Description</th>
+            <th>Probability</th>
+            <th>Impact</th>
+            <th>Mitigation / Action Plan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R1</td>
+            <td>Alert A excessive volume leading to alert fatigue</td>
+            <td>Medium</td>
+            <td>Medium</td>
+            <td>Implement digest format and grouped dashboard views</td>
+          </tr>
+          <tr>
+            <td>R2</td>
+            <td>Multiple placeholder S/N values (e.g. UNKNOWN, TBD) bypassing Alert B logic</td>
+            <td>High</td>
+            <td>High</td>
+            <td>Data audit before deployment to identify all placeholder patterns and include in logic</td>
+          </tr>
+          <tr>
+            <td>R3</td>
+            <td>Engineers don't act on Alert B within 24 hours</td>
+            <td>Low</td>
+            <td>High</td>
+            <td>Escalate to Management automatically after 24 hours; track in resolution register</td>
+          </tr>
+          <tr>
+            <td>R4</td>
+            <td>Alert delivery failure due to system integration issues</td>
+            <td>Low</td>
+            <td>High</td>
+            <td>Delivery confirmation logging and fallback UI dashboard for manual checks</td>
+          </tr>
+          <tr>
+            <td>R5</td>
+            <td>Scope creep to non-HT slots</td>
+            <td>Medium</td>
+            <td>Low</td>
+            <td>Define clear TRK filter criteria and strictly apply to DB queries</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content hidden" id="tab-stakeholders">
+      <h3>Stakeholders & Responsibilities</h3>
+      <table class="info-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Responsibility</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Solomon Alemu</td>
+            <td>Engineer IV, MPTC</td>
+            <td>Project owner, requirements definition, query validation, UAT</td>
+          </tr>
+          <tr>
+            <td>Dawit Negash</td>
+            <td>Mgr. MPTC</td>
+            <td>Project sponsor, approver, escalation authority for overdue resolutions</td>
+          </tr>
+          <tr>
+            <td>Pineal Dibaba</td>
+            <td>TL, OAS</td>
+            <td>IT lead, system integration, deployment coordination</td>
+          </tr>
+          <tr>
+            <td>Birhanu Mossie</td>
+            <td>Sr. Developer I</td>
+            <td>Technical implementation, backend/frontend development, query optimization</td>
+          </tr>
+          <tr>
+            <td>MPTC Fleet Engineers</td>
+            <td>Fleet-specific SMEs</td>
+            <td>Daily alert monitoring, investigation of XXX S/N, task creation in Maintenix</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>Ethiopian Airlines Group | Aircraft Engineering & Planning | CONFIDENTIAL</p>
+    <p>HTC End-to-End Visibility Monitoring v1.0 | RCCA No. 08-April-2026 | IT Ticket #6115802</p>
+  </footer>
+
+  <div id="toast-container"></div>
+  <div id="upload-overlay" class="hidden">
+    <div class="spinner"></div>
+    <h3>Uploading and Processing Excel...</h3>
+    <p>Please wait, this may take a moment.</p>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

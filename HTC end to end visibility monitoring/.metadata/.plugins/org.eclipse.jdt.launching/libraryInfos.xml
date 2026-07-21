@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="C:\Program Files (x86)\Java\jre1.8.0_491" version="1.8.0_491">
+        <bootpath>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\resources.jar"/>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\rt.jar"/>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\jsse.jar"/>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\jce.jar"/>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\charsets.jar"/>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\jfr.jar"/>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\ext"/>
+            <entry path="C:\windows\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Program Files (x86)\Java\jre1.8.0_491\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="C:\Users\solomonal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626" version="22.0.2">
+        <bootpath>
+            <entry path="null"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="null"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="null"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="C:\Users\solomonal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626\jre" version="22.0.2"/>
+</libraryInfos>

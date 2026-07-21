@@ -1,0 +1,2392 @@
+!SESSION 2026-07-21 15:04:46.520 -----------------------------------------------
+eclipse.buildId=4.40.0.20260604-0652
+java.version=22.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-07-21 15:04:53.197
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-07-21 15:06:54.127
+!MESSAGE Logback config file: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.101.20251017-1242.xml
+
+!ENTRY org.eclipse.jface 2 0 2026-07-21 15:06:56.721
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2026-07-21 15:06:56.721
+!MESSAGE A conflict occurred for ALT+CTRL+SHIFT+T:
+Binding(ALT+CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.terminal.view.ui.command.launchToolbar,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.terminal.view.ui.command.launchToolbar"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.view.ui.command.launchToolbar,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm.terminal.view.ui.command.launchToolbar"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2026-07-21 15:06:56.721
+!MESSAGE A conflict occurred for ALT+CTRL+P:
+Binding(ALT+CTRL+P,
+	ParameterizedCommand(Command(org.eclipse.linuxtools.changelog.core.preparechangelog,Prepare Changelog,
+		Prepares Changelog,
+		Category(org.eclipse.linuxtools.changelog,Changelog,Changelog key bindings,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.linuxtools.changelog.core.preparechangelog"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+P,
+	ParameterizedCommand(Command(org.eclipse.m2e.profiles.ui.commands.selectMavenProfileCommand,Select Maven Profiles,
+		,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.m2e.profiles.ui.commands.selectMavenProfileCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2026-07-21 15:06:56.721
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.terminal.connector.local.command.launch"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm.terminal.connector.local.command.launch"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-07-21 15:07:02.700
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-07-21 15:07:02.703
+!MESSAGE [Info] Found native binary in fragment bundle: com.microsoft.copilot.eclipse.core.agent.win32
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-07-21 15:07:02.738
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\solomonal'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-07-21 15:07:02.748
+!MESSAGE [Info] Binary agent started successfully.
+
+!ENTRY com.anthropic.claudecode.eclipse 1 0 2026-07-21 15:07:02.938
+!MESSAGE Claude Code for Eclipse starting...
+
+!ENTRY com.anthropic.claudecode.eclipse 1 0 2026-07-21 15:07:03.041
+!MESSAGE HTTP+SSE server (Rust) listening on 127.0.0.1:10000
+
+!ENTRY com.anthropic.claudecode.eclipse 1 0 2026-07-21 15:07:03.053
+!MESSAGE Lock file written (Rust) for port 10000 workspace=C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker projects=1
+
+!ENTRY com.anthropic.claudecode.eclipse 1 0 2026-07-21 15:07:03.057
+!MESSAGE Claude Code server started on port 10000
+
+!ENTRY com.anthropic.claudecode.eclipse 1 0 2026-07-21 15:07:03.544
+!MESSAGE Selection tracking started
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.505
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[lsp] GitHub Copilot Language Server 1.502.5 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.618
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[UndiciFetcher] HTTP settings changed; resetting Undici dispatchers. {
+  proxy: 'none',
+  noProxyCount: 0,
+  proxyStrictSSL: true,
+  hasProxyAuthorization: false,
+  hasProxyKerberosServicePrincipal: false
+}
+
+!ENTRY org.eclipse.lsp4e 2 0 2026-07-21 15:07:05.619
+!MESSAGE [LS:GitHub Copilot Language Server][Warning]	[McpAutoApproveService] Invalid McpAutoApproveService config, resetting to empty undefined
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.620
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[certificates] Removed 20 expired certificates
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.621
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[UndiciFetcher] Root certificate set changed; resetting Undici dispatchers. { certificateCount: 211 }
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.649
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[default] Policy watcher started for GitHub Copilot Plugin
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.652
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[ripgrep] Using tmpFolder for ripgrep: C:\Users\solomonal\.cache\pkg\72dc6f288b8f13e22da7572a55f576ac335b8402e617b8aaf91f8dbf72adf1a0
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.653
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[ripgrep] Resolved ripgrep path: C:\Users\solomonal\.cache\pkg\72dc6f288b8f13e22da7572a55f576ac335b8402e617b8aaf91f8dbf72adf1a0\rg.exe
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:05.653
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[ripgrep] Set GITHUB_COPILOT_RIPGREP_PATH_OVERRIDE=C:\Users\solomonal\.cache\pkg\72dc6f288b8f13e22da7572a55f576ac335b8402e617b8aaf91f8dbf72adf1a0\rg.exe
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:06.272
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[GithubAvailableEmbeddingTypes] Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.079
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[AutoModelService] Auto model cache cleared due to token update
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.080
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[CopilotMCP] MCP state changed from false to true
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.089
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[BackgroundAgent] GitHub identity changed, clearing cached sessions {
+  hadPrevious: false,
+  hasCurrent: true,
+  cachedSessionCount: 0,
+  remoteDelegateCount: 0
+}
+
+!ENTRY org.eclipse.lsp4e 2 0 2026-07-21 15:07:12.218
+!MESSAGE [LS:GitHub Copilot Language Server][Warning]	[McpAutoApproveService] Invalid McpAutoApproveService config, resetting to empty undefined
+
+!ENTRY org.eclipse.lsp4e 2 0 2026-07-21 15:07:12.243
+!MESSAGE [LS:GitHub Copilot Language Server][Warning]	[McpAutoApproveService] Invalid McpAutoApproveService config, resetting to empty undefined
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.275
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Local Diff Tracker] Initializing Local Diff Tracker
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.276
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Embeddings Search] Triggering local indexing...
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.277
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Embeddings Search] EmbeddingsChunkSearch: initializing embeddings index for 0 files.
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.278
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Tfidf Search] Starting initialization...
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.278
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Embeddings Search] Workspace indexing completed in 1.4421999999995023ms { status: 'ready', indexingTime: 1.4758999999994558 }
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.279
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Tfidf Search] Preparing files for indexing { totalFiles: 0, filesToIndex: 0, maxFileCount: 25000 }
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.279
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Embeddings Search] Starting workspace indexing... { fileCount: 0 }
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.280
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Local Diff Tracker] Workspace folder file:///C:/Users/solomonal/OneDrive%20-%20Ethiopian%20Airlines/Others/11%20KPI%20folder/2.%20Projects/10.%20Hard%20time%20missing%20mandatory%20tracker/ is not a GitHub repository
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:07:12.433
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[Tfidf Search] Initialization completed in 170.0619000000006ms {
+  outOfSyncFileCount: 0,
+  newFileCount: 0,
+  deletedFileCount: 0,
+  initTime: 0.17120000000068103,
+  dbPath: 'C:\\Users\\solomonal\\AppData\\Local\\Temp\\github-copilot\\project-index\\10. Hard time missing mandatory tracker.6116996b\\local-index.db'
+}
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2026-07-21 15:07:13.386
+!MESSAGE Setup tasks were performed during startup updating 4 preferences. See 'C:\Users\solomonal\eclipse\java-2024-062\eclipse\configuration\org.eclipse.oomph.setup\setup.log' for details
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:07:44.080
+!MESSAGE Unable to make private static native int java.util.prefs.WindowsPreferences.WindowsRegCloseKey(long) accessible: module java.prefs does not "opens java.util.prefs" to unnamed module @61ecd0ca
+!STACK 0
+java.lang.reflect.InaccessibleObjectException: Unable to make private static native int java.util.prefs.WindowsPreferences.WindowsRegCloseKey(long) accessible: module java.prefs does not "opens java.util.prefs" to unnamed module @61ecd0ca
+	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:388)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:364)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:312)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:203)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:197)
+	at at.jta.Regor.initMethods(Regor.java:1553)
+	at at.jta.Regor.<init>(Regor.java:264)
+	at org.python.pydev.ui.pythonpathconf.PythonInterpreterProviderFactory.getInterpreterProviders(PythonInterpreterProviderFactory.java:54)
+	at org.python.pydev.ui.pythonpathconf.AutoConfigMaker$3.run(AutoConfigMaker.java:483)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.python.pydev.ui.pythonpathconf.AutoConfigMaker.getAllProviders(AutoConfigMaker.java:480)
+	at org.python.pydev.ui.pythonpathconf.AutoConfigMaker.getPossibleInterpreters(AutoConfigMaker.java:465)
+	at org.python.pydev.ui.pythonpathconf.AutoConfigMaker.autoConfigSearch(AutoConfigMaker.java:205)
+	at org.python.pydev.ui.pythonpathconf.AutoConfigMaker.autoConfigSingleApply(AutoConfigMaker.java:124)
+	at org.python.pydev.ui.PyProjectPythonDetails$ProjectInterpreterAndGrammarConfig$2.widgetSelected(PyProjectPythonDetails.java:326)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:290)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4363)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1217)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1241)
+	at org.eclipse.swt.widgets.Widget.sendSelectionEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Link.wmNotifyChild(Link.java:733)
+	at org.eclipse.swt.widgets.Control.wmNotify(Control.java:6031)
+	at org.eclipse.swt.widgets.Composite.wmNotify(Composite.java:1964)
+	at org.eclipse.swt.widgets.Control.WM_NOTIFY(Control.java:5598)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5030)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5131)
+	at org.eclipse.swt.internal.win32.OS.CallWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Link.callWindowProc(Link.java:158)
+	at org.eclipse.swt.widgets.Widget.wmLButtonUp(Widget.java:2178)
+	at org.eclipse.swt.widgets.Control.WM_LBUTTONUP(Control.java:5411)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5011)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5131)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3747)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:819)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.actions.NewWizardShortcutAction.run(NewWizardShortcutAction.java:130)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:415)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4363)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1217)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4161)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3749)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1051)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:684)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:193)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:615)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:563)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1415)
+
+!ENTRY org.python.pydev.shared_core 1 1 2026-07-21 15:07:44.499
+!MESSAGE - Ok, file is non-null. Getting info on:C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe
+- Beggining task:Getting libs totalWork:100
+- Setting task name:Mounting executable string...
+- Setting task name:Executing: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\interpreterInfo.py
+- Setting task name:Making pythonpath environment...C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\interpreterInfo.py
+- Setting task name:Making exec...C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\interpreterInfo.py
+- Setting task name:Reading output...
+- Setting task name:Waiting for process to finish.
+- Setting task name:Process finished.
+- Success getting the info. Result:<xml>
+<name>python</name>
+<version>3.12</version>
+<executable>C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe</executable>
+<vmArgs>-Xfrozen_modules=off</vmArgs>
+<lib>C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs</lib>
+<lib>C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib</lib>
+<lib>C:\Users\solomonal\AppData\Local\Programs\Python\Python312</lib>
+<lib>C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages</lib>
+<lib>C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages</lib>
+<lib>C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32</lib>
+<lib>C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib</lib>
+<lib>C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin</lib>
+<forced_lib>Image</forced_lib>
+<forced_lib>OpenGL</forced_lib>
+<forced_lib>_abc</forced_lib>
+<forced_lib>_ast</forced_lib>
+<forced_lib>_bisect</forced_lib>
+<forced_lib>_blake2</forced_lib>
+<forced_lib>_bytesio</forced_lib>
+<forced_lib>_codecs</forced_lib>
+<forced_lib>_codecs_cn</forced_lib>
+<forced_lib>_codecs_hk</forced_lib>
+<forced_lib>_codecs_iso2022</forced_lib>
+<forced_lib>_codecs_jp</forced_lib>
+<forced_lib>_codecs_kr</forced_lib>
+<forced_lib>_codecs_tw</forced_lib>
+<forced_lib>_collections</forced_lib>
+<forced_lib>_contextvars</forced_lib>
+<forced_lib>_csv</forced_lib>
+<forced_lib>_datetime</forced_lib>
+<forced_lib>_fileio</forced_lib>
+<forced_lib>_functools</forced_lib>
+<forced_lib>_heapq</forced_lib>
+<forced_lib>_hotshot</forced_lib>
+<forced_lib>_imp</forced_lib>
+<forced_lib>_io</forced_lib>
+<forced_lib>_json</forced_lib>
+<forced_lib>_locale</forced_lib>
+<forced_lib>_lsprof</forced_lib>
+<forced_lib>_md5</forced_lib>
+<forced_lib>_multibytecodec</forced_lib>
+<forced_lib>_opcode</forced_lib>
+<forced_lib>_operator</forced_lib>
+<forced_lib>_pickle</forced_lib>
+<forced_lib>_random</forced_lib>
+<forced_lib>_sha</forced_lib>
+<forced_lib>_sha1</forced_lib>
+<forced_lib>_sha2</forced_lib>
+<forced_lib>_sha256</forced_lib>
+<forced_lib>_sha3</forced_lib>
+<forced_lib>_sha512</forced_lib>
+<forced_lib>_signal</forced_lib>
+<forced_lib>_sre</forced_lib>
+<forced_lib>_stat</forced_lib>
+<forced_lib>_statistics</forced_lib>
+<forced_lib>_string</forced_lib>
+<forced_lib>_struct</forced_lib>
+<forced_lib>_subprocess</forced_lib>
+<forced_lib>_symtable</forced_lib>
+<forced_lib>_thread</forced_lib>
+<forced_lib>_tokenize</forced_lib>
+<forced_lib>_tracemalloc</forced_lib>
+<forced_lib>_typing</forced_lib>
+<forced_lib>_warnings</forced_lib>
+<forced_lib>_weakref</forced_lib>
+<forced_lib>_winapi</forced_lib>
+<forced_lib>_winreg</forced_lib>
+<forced_lib>_xxinterpchannels</forced_lib>
+<forced_lib>_xxsubinterpreters</forced_lib>
+<forced_lib>array</forced_lib>
+<forced_lib>atexit</forced_lib>
+<forced_lib>audioop</forced_lib>
+<forced_lib>binascii</forced_lib>
+<forced_lib>builtins</forced_lib>
+<forced_lib>cPickle</forced_lib>
+<forced_lib>cStringIO</forced_lib>
+<forced_lib>cmath</forced_lib>
+<forced_lib>cv2</forced_lib>
+<forced_lib>datetime</forced_lib>
+<forced_lib>email</forced_lib>
+<forced_lib>errno</forced_lib>
+<forced_lib>exceptions</forced_lib>
+<forced_lib>faulthandler</forced_lib>
+<forced_lib>future_builtins</forced_lib>
+<forced_lib>gc</forced_lib>
+<forced_lib>gi</forced_lib>
+<forced_lib>hashlib</forced_lib>
+<forced_lib>imageop</forced_lib>
+<forced_lib>imp</forced_lib>
+<forced_lib>itertools</forced_lib>
+<forced_lib>marshal</forced_lib>
+<forced_lib>math</forced_lib>
+<forced_lib>mmap</forced_lib>
+<forced_lib>mock</forced_lib>
+<forced_lib>msvcrt</forced_lib>
+<forced_lib>multiprocessing</forced_lib>
+<forced_lib>mutagen</forced_lib>
+<forced_lib>nt</forced_lib>
+<forced_lib>numpy</forced_lib>
+<forced_lib>operator</forced_lib>
+<forced_lib>os</forced_lib>
+<forced_lib>os.path</forced_lib>
+<forced_lib>parser</forced_lib>
+<forced_lib>py</forced_lib>
+<forced_lib>pytest</forced_lib>
+<forced_lib>random</forced_lib>
+<forced_lib>re</forced_lib>
+<forced_lib>scipy</forced_lib>
+<forced_lib>signal</forced_lib>
+<forced_lib>six</forced_lib>
+<forced_lib>socket</forced_lib>
+<forced_lib>ssl</forced_lib>
+<forced_lib>strop</forced_lib>
+<forced_lib>sys</forced_lib>
+<forced_lib>thread</forced_lib>
+<forced_lib>time</forced_lib>
+<forced_lib>werkzeug</forced_lib>
+<forced_lib>winreg</forced_lib>
+<forced_lib>wx</forced_lib>
+<forced_lib>wxPython</forced_lib>
+<forced_lib>xxsubtype</forced_lib>
+<forced_lib>zipimport</forced_lib>
+<forced_lib>zlib</forced_lib>
+<string_substitution_var><key>PY</key><value>312</value></string_substitution_var>
+</xml>
+
+
+!ENTRY org.python.pydev.shared_core 1 1 2026-07-21 15:07:44.505
+!MESSAGE Restoring info for: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe
+
+!ENTRY org.python.pydev.shared_core 1 1 2026-07-21 15:07:54.628
+!MESSAGE Finished restoring information for: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe at: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.python.pydev\v1_e0bdpmbg5pjqlv6o82gdzkykh
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:07:59.415
+!MESSAGE Info: Rebuilding internal caches: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\com.python.pydev.analysis\python_v1_e0bdpmbg5pjqlv6o82gdzkykh\python.pydevsysteminfo (Expected error to be provided and got no error!)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:09:37.552
+!MESSAGE Info: Rebuilding internal caches: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.core.resources\.projects\HTC end to end visibility monitoring\com.python.pydev.analysis\AdditionalProjectInterpreterInfo.pydevinfo (Expected error to be provided and got no error!)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:03.659
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:functorch._C
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 62038
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:293)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:1039)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:870)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:400)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:05.098
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:gevent._gevent_c_abstract_linkable
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 58280
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:293)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:1039)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:870)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:400)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:08.372
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:numpy
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 58282
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getBuiltinModule(SystemModulesManager.java:349)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:395)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:11.942
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:psycopg2._psycopg
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55486
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:293)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:1039)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:870)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:400)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:13.305
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:pyarrow.arrow
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55491
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:293)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:1039)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:870)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:400)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:15.126
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:pyclipper._pyclipper
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55493
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:293)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:1039)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:870)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:400)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:18.390
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:scipy
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55496
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getBuiltinModule(SystemModulesManager.java:349)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:395)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:20.069
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:scipy.cluster._hierarchy
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55500
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getBuiltinModule(SystemModulesManager.java:369)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:395)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:22.202
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:scipy.cluster._hierarchy
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55504
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:293)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:1039)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:870)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:400)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:24.362
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:scipy.cluster._optimal_leaf_ordering
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55509
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getBuiltinModule(SystemModulesManager.java:369)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:395)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:27.287
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:scipy.integrate._dop
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55515
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getBuiltinModule(SystemModulesManager.java:369)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:395)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2026-07-21 15:10:29.260
+!MESSAGE ERROR reading shell. Message sent: @@IMPORTS:scipy.integrate._dop
+END@@
+
+ProcessInfo:
+
+ - Executed: C:\Users\solomonal\AppData\Local\Programs\Python\Python312\python.exe -u C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pycompletionserver.py 55517
+
+ - Environment:
+=::=::\
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\solomonal\AppData\Roaming
+CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+CHOCOLATEYLASTPATHUPDATE=133740582881383279
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMPUTERNAME=PCMROEG07
+COMSPEC=C:\windows\system32\cmd.exe
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+EFC_67284=1
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOMEDRIVE=C:
+HOMEPATH=\Users\solomonal
+IWBPATH=C:\Program Files (x86)\SAP\FrontEnd\iwb
+LOCALAPPDATA=C:\Users\solomonal\AppData\Local
+LOGONSERVER=\\SVDCDC022
+MOSQUITTO_DIR=C:\Program Files\mosquitto\
+MOSQUITTO_SUB=C:\Program Files\mosquitto\
+NUMBER_OF_PROCESSORS=20
+ONEDRIVE=C:\Users\solomonal\OneDrive - Ethiopian Airlines
+ONLINESERVICES=Online Services
+OS=Windows_NT
+PATH2=C:\Program Files (x86)\Internet Explorer\iexplore
+PATH=C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/solomonal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Meld\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\gs\gs10.05.1\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\solomonal\AppData\Local\Microsoft\WindowsApps;C:\Users\solomonal\.dotnet\tools;C:\Users\solomonal\AppData\Roaming\npm;C:\Users\solomonal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\solomonal\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Microsoft Office\root\Client;C:\Users\solomonal\eclipse\java-2024-062\eclipse;
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PLATFORMCODE=7F
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=9702
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMW6432=C:\Program Files
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+PUBLIC=C:\Users\Public
+PYTHONPATH=C:\Users\solomonal\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc\pydev_sitecustomize;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\DLLs;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312;C:\Users\solomonal\AppData\Roaming\Python\Python312\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib;C:\Users\solomonal\AppData\Local\Programs\Python\Python312\Lib\site-packages\Pythonwin
+REGIONCODE=EMEA
+SCRIPTS\ACTIVATE=Scripts\activate
+SESSIONNAME=Console
+SNC_LIB=C:\Program Files (x86)\SAP\SNCEncryption\x86\sapsncencryption.dll
+SNC_LIB_64=C:\Program Files (x86)\SAP\SNCEncryption\x64\sapsncencryption.dll
+SQL=C:\sqlite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\windows
+TEMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+TMP=C:\Users\SOLOMO~1\AppData\Local\Temp
+UATDATA=C:\windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+USERDNSDOMAIN=ETHIOPIANAIRLINES.COM
+USERDOMAIN=ET
+USERDOMAIN_ROAMINGPROFILE=ET
+USERNAME=SolomonAl
+USERPROFILE=C:\Users\solomonal
+WINDIR=C:\windows
+ZES_ENABLE_SYSMAN=1
+
+ - Working Dir:
+C:\Users\solomonal\eclipse\java-2024-062\eclipse\..\..\..\.p2\pool\plugins\org.python.pydev.core_13.1.0.202509210817\pysrc
+
+ - OS:
+Windows 11
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingRead(SocketChannelImpl.java:1431)
+	at java.base/sun.nio.ch.SocketInputStream.implRead(SocketInputStream.java:68)
+	at java.base/sun.nio.ch.SocketInputStream.read(SocketInputStream.java:78)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:457)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.read(AbstractShell.java:515)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:710)
+	at org.python.pydev.ast.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:702)
+	at org.python.pydev.ast.codecompletion.shell.CompletionsShell.getImportCompletions(CompletionsShell.java:63)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.createTokensFromServer(CompiledModule.java:378)
+	at org.python.pydev.ast.codecompletion.revisited.modules.CompiledModule.<init>(CompiledModule.java:180)
+	at org.python.pydev.ast.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:293)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:1039)
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.getModule(ModulesManager.java:870)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.getModule(SystemModulesManager.java:400)
+	at com.python.pydev.analysis.additionalinfo.AbstractAdditionalDependencyInfo.updateKeysIfNeededAndSave(AbstractAdditionalDependencyInfo.java:259)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:171)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:97)
+	at com.python.pydev.analysis.system_info_builder.InterpreterInfoBuilder.syncInfoToPythonPath(InterpreterInfoBuilder.java:83)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManager.synchronizeManagerToNameToInfoPythonpath(SyncSystemModulesManager.java:392)
+	at org.python.pydev.ast.codecompletion.revisited.SyncSystemModulesManagerScheduler$SynchJob.run(SyncSystemModulesManagerScheduler.java:257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:32:14.232
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[AutoModelService] Auto model cache cleared due to token update
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-07-21 15:32:27.471
+!MESSAGE [LS:GitHub Copilot Language Server][Info]	[fetcher] Request to <https://dc.services.visualstudio.com/v2/track> failed, attempting fallback. Error [TypeError]: fetch failed
+    at Object.processResponse (C:\snapshot\copilot-language-server-internal\dist\main.js:348:32904)
+    at C:\snapshot\copilot-language-server-internal\dist\main.js:348:39248
+    at node:internal/process/task_queues:149:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:146:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+  code: 'ERR_HTTP2_ERROR',
+  syscall: undefined,
+  errno: -505,
+  [cause]: Error [ERR_HTTP2_ERROR]: Protocol error
+      at Http2Session.onSessionInternalError (node:internal/http2/core:862:26) {
+    code: 'ERR_HTTP2_ERROR',
+    errno: -505
+  }
+}
+
+!ENTRY org.eclipse.ui 2 2 2026-07-21 15:35:40.670
+!MESSAGE Invalid property category path: org.eclipse.cdt.managedbuilder.ui.properties.Page_head_build (bundle: org.eclipse.cdt.ui, propertyPage: org.eclipse.cdt.managedbuilder.ui.properties.BuildLogPreferencePage)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.700
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\lockfile (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.701
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\lockfile (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\lockfile (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.898
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_0 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.899
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_0 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_0 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.903
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_1 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.904
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_1 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_1 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.909
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_2 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.910
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_2 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_2 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.913
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_3 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.913
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_3 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\data_3 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.916
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\index (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.917
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\index (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnGraphiteCache\index (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.923
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_0 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.924
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_0 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_0 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.927
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_1 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.928
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_1 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_1 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.931
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_2 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.931
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_2 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_2 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.934
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_3 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.935
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_3 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\data_3 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.940
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\index (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:00.940
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\index (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\DawnWebGPUCache\index (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.000
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_0 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.000
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_0 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_0 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.006
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_1 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.006
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_1 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_1 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.011
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_2 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.011
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_2 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_2 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.014
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_3 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.014
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_3 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\data_3 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.016
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\index (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.016
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\index (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\GPUCache\index (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.034
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Network\Cookies (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.034
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Network\Cookies (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Network\Cookies (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.035
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Network\Cookies-journal (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.035
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Network\Cookies-journal (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Network\Cookies-journal (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.084
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Safe Browsing Network\Safe Browsing Cookies (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.084
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Safe Browsing Network\Safe Browsing Cookies (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Safe Browsing Network\Safe Browsing Cookies (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.085
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Safe Browsing Network\Safe Browsing Cookies-journal (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.085
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Safe Browsing Network\Safe Browsing Cookies-journal (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Safe Browsing Network\Safe Browsing Cookies-journal (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.165
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.db (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.165
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.db (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.db (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.166
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.db-wal (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.166
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.db-wal (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.db-wal (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.166
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.journal (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.167
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.journal (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GPUPersistentCache\DawnGraphiteCache\IJOGKRFPMZ7VTQMWF2G3DJTAKIRMX3AK\cache.journal (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.167
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_0 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.168
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_0 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_0 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.175
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_1 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.175
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_1 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_1 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.182
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_2 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.182
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_2 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_2 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.185
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_3 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.186
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_3 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\data_3 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.194
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\index (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.194
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\index (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\GrShaderCache\index (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.432
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_0 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.432
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_0 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_0 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.435
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_1 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.435
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_1 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_1 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.440
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_2 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.440
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_2 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_2 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.442
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_3 (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.443
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_3 (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\data_3 (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.445
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\index (The process cannot access the file because it is being used by another process)
+
+!ENTRY org.eclipse.ui.ide 4 0 2026-07-21 15:36:01.445
+!MESSAGE C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\index (The process cannot access the file because it is being used by another process)
+!STACK 0
+java.io.FileNotFoundException: C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\.metadata\.plugins\org.eclipse.swt\EBWebView\ShaderCache\index (The process cannot access the file because it is being used by another process)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.ui.internal.ide.filesystem.FileSystemStructureProvider.getContents(FileSystemStructureProvider.java:80)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFile(ImportOperation.java:530)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importRecursivelyFrom(ImportOperation.java:768)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.importFileSystemObjects(ImportOperation.java:663)
+	at org.eclipse.ui.wizards.datatransfer.ImportOperation.execute(ImportOperation.java:392)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
