@@ -493,11 +493,11 @@ def get_alert_b_events(db_path, fleet=None, date_from=None, date_to=None, bom=No
         query += " AND event_dt <= ?"
         params.append(date_to)
     if bom:
-        query += " AND config_slot_code = ?"
-        params.append(bom)
+        query += " AND config_slot_code LIKE ?"
+        params.append(f"%{bom}%")
     if part_group:
-        query += " AND part_group_name = ?"
-        params.append(part_group)
+        query += " AND part_group_name LIKE ?"
+        params.append(f"%{part_group}%")
         
     query += " ORDER BY id DESC"
     
