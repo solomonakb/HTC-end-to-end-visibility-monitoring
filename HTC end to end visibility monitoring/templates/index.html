@@ -14,7 +14,7 @@
     <div class="logo">✈️ Ethiopian Airlines</div>
     <div class="header-titles">
       <h1>HTC End-to-End Visibility Monitoring</h1>
-      <h2>Aircraft Maintenance Program & Task Card Engineering (MPTC)</h2>
+      <h2>Aircraft Engineering and Planning (AEP)</h2>
     </div>
     <button id="btn-theme-toggle" class="btn-theme-toggle" title="Toggle theme" style="margin-left: auto;">
       <span id="theme-icon">🌙</span>
@@ -59,9 +59,7 @@
     <button class="tab-btn" data-target="tab-alert-a">Alert A (Install/Remove)</button>
     <button class="tab-btn" data-target="tab-alert-b">Alert B (XXX S/N)</button>
     <button class="tab-btn" data-target="tab-alert-c">Alert C (MMC)</button>
-    <button class="tab-btn" data-target="tab-resolutions">Resolution Tracker</button>
-    <button class="tab-btn" data-target="tab-risk-register">Risk Register</button>
-    <button class="tab-btn" data-target="tab-stakeholders">Stakeholders</button>
+    <button class="tab-btn" data-target="tab-resolutions">Resolution Tracker</button> 
   </nav>
 
   <div class="filters-bar" id="filters-bar">
@@ -298,98 +296,9 @@
         </div>
       </div>
     </div>
+ 
 
-    <div class="tab-content hidden" id="tab-risk-register">
-      <h3>Risk Register</h3>
-      <table class="info-table">
-        <thead>
-          <tr>
-            <th>Risk ID</th>
-            <th>Description</th>
-            <th>Probability</th>
-            <th>Impact</th>
-            <th>Mitigation / Action Plan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>R1</td>
-            <td>Alert A excessive volume leading to alert fatigue</td>
-            <td>Medium</td>
-            <td>Medium</td>
-            <td>Implement digest format and grouped dashboard views</td>
-          </tr>
-          <tr>
-            <td>R2</td>
-            <td>Multiple placeholder S/N values (e.g. UNKNOWN, TBD) bypassing Alert B logic</td>
-            <td>High</td>
-            <td>High</td>
-            <td>Data audit before deployment to identify all placeholder patterns and include in logic</td>
-          </tr>
-          <tr>
-            <td>R3</td>
-            <td>Engineers don't act on Alert B within 24 hours</td>
-            <td>Low</td>
-            <td>High</td>
-            <td>Escalate to Management automatically after 24 hours; track in resolution register</td>
-          </tr>
-          <tr>
-            <td>R4</td>
-            <td>Alert delivery failure due to system integration issues</td>
-            <td>Low</td>
-            <td>High</td>
-            <td>Delivery confirmation logging and fallback UI dashboard for manual checks</td>
-          </tr>
-          <tr>
-            <td>R5</td>
-            <td>Scope creep to non-HT slots</td>
-            <td>Medium</td>
-            <td>Low</td>
-            <td>Define clear TRK filter criteria and strictly apply to DB queries</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tab-content hidden" id="tab-stakeholders">
-      <h3>Stakeholders & Responsibilities</h3>
-      <table class="info-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Responsibility</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Solomon Alemu</td>
-            <td>Engineer IV, MPTC</td>
-            <td>Project owner, requirements definition, query validation, UAT</td>
-          </tr>
-          <tr>
-            <td>Dawit Negash</td>
-            <td>Mgr. MPTC</td>
-            <td>Project sponsor, approver, escalation authority for overdue resolutions</td>
-          </tr>
-          <tr>
-            <td>Pineal Dibaba</td>
-            <td>TL, OAS</td>
-            <td>IT lead, system integration, deployment coordination</td>
-          </tr>
-          <tr>
-            <td>Birhanu Mossie</td>
-            <td>Sr. Developer I</td>
-            <td>Technical implementation, backend/frontend development, query optimization</td>
-          </tr>
-          <tr>
-            <td>MPTC Fleet Engineers</td>
-            <td>Fleet-specific SMEs</td>
-            <td>Daily alert monitoring, investigation of XXX S/N, task creation in Maintenix</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    
   </main>
 
   <footer>

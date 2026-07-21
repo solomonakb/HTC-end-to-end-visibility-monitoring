@@ -76,6 +76,32 @@ function setupEventListeners() {
         else if(currentTab === 'tab-resolutions') loadResolutions();
     });
 
+    // Enter key to apply filters
+    const filterInputs = document.querySelectorAll('.filters-bar input, .filters-bar select');
+    filterInputs.forEach(input => {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // prevent any form submission
+                document.getElementById('btn-apply-filters').click();
+            }
+        });
+    });
+
+    // Clear filters
+    const clearBtn = document.getElementById('btn-clear-filters');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            document.getElementById('fleet-filter').value = '';
+            document.getElementById('event-type-filter').value = '';
+            document.getElementById('date-from').value = '';
+            document.getElementById('date-to').value = '';
+            document.getElementById('search-input').value = '';
+            document.getElementById('bom-filter').value = '';
+            document.getElementById('part-group-filter').value = '';
+            document.getElementById('btn-apply-filters').click();
+        });
+    }
+
     // Export
     document.getElementById('btn-export-csv').addEventListener('click', exportCSV);
 
@@ -363,7 +389,7 @@ function renderAlertCTable(events, tbodyId) {
             <td>${evt.part_no || '-'}</td>
             <td>${evt.part_group_name || '-'}</td>
             <td>${evt.barcode || '-'}</td>
-            <td>${evt.performed_by_username || evt.performed_by_user || '-'}</td>
+            <td>${evt.performed_by_user || '-'}</td>
             <td style="font-weight: bold; ${evt.days_since_removal >= 7 ? 'color: var(--color-danger);' : ''}">${evt.days_since_removal} days</td>
             <td>${evt.reinstall_date ? formatDate(evt.reinstall_date) : '-'}</td>
             <td>${evt.reinstall_sn || '-'}</td>
