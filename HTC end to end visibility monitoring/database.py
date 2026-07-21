@@ -667,6 +667,26 @@ def get_mmc_alerts(db_path, fleet=None, date_from=None, date_to=None, bom=None, 
     
     return mmc_alerts
 
+def get_fleet_dashboard(db_path, date_from=None, date_to=None, bom=None, part_group=None):
+    """Returns XXX S/N Alert counts and Empty Config Slot (MMC) counts, broken
+    down per fleet type, for the Dashboard tab's per-fleet KPI cards."""
+    fleets = get_fleet_types(db_path)
+
+    breakdown = []
+    for fleet in fleets:
+        xxx_events = get_alert_b_events(db_path, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        mmc_alerts = get_mmc_alerts(db_path, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        breakdown.append({
+            "fleet": fleet,
+            "xxx_sn_count": len(xxx_events),
+            "empty_slots_count": len(mmc_alerts)
+        })
+
+    # Sort fleets with the most XXX S/N alerts first so the busiest fleets surface at the top
+    breakdown.sort(key=lambda x: x["xxx_sn_count"], reverse=True)
+    return breakdown
+
+
 def get_fleet_types(db_path):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()

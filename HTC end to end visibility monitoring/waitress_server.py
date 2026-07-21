@@ -187,6 +187,23 @@ def alert_mmc():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/api/dashboard-by-fleet', methods=['GET'])
+def dashboard_by_fleet():
+    """XXX S/N Alert and Empty Config Slot counts broken down per fleet type,
+    for the Dashboard tab's per-fleet KPI cards."""
+    date_from = request.args.get('date_from')
+    date_to = request.args.get('date_to')
+    bom = request.args.get('bom')
+    part_group = request.args.get('part_group')
+
+    try:
+        breakdown = database.get_fleet_dashboard(DB_PATH, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        return jsonify({"fleets": breakdown})
+    except Exception as e:
+        logger.error(f"Dashboard by fleet error: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route('/api/fleet-types', methods=['GET'])
 def fleet_types():
     try:

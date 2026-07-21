@@ -175,6 +175,63 @@ header {
   color: var(--text-muted);
 }
 
+/* Fleet Dashboard */
+.fleet-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.fleet-dashboard-group {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.fleet-dashboard-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fleet-dashboard-group-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+}
+
+.fleet-dashboard-group-header .fleet-total-badge {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.fleet-dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.fleet-dashboard-cards .kpi-card {
+  padding: 1rem;
+}
+
+.fleet-dashboard-cards .kpi-value {
+  font-size: 2rem;
+}
+
+.fleet-dashboard-empty {
+  color: var(--text-secondary);
+  padding: 2rem;
+  text-align: center;
+}
+
 /* Tabs */
 .tab-nav {
   display: flex;

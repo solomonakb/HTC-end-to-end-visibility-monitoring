@@ -55,7 +55,7 @@
   </div>
 
   <nav class="tab-nav">
-    <button class="tab-btn active" data-target="tab-all-events">All Events</button>
+    <button class="tab-btn active" data-target="tab-dashboard">Dashboard</button>
     <button class="tab-btn" data-target="tab-alert-a">Alert A (Install/Remove)</button>
     <button class="tab-btn" data-target="tab-alert-b">Alert B (XXX S/N)</button>
     <button class="tab-btn" data-target="tab-alert-c">Alert C (MMC)</button>
@@ -105,31 +105,13 @@
   </div>
 
   <main>
-    <div class="tab-content active" id="tab-all-events">
-      <div class="table-container">
-        <table id="events-table">
-          <thead>
-            <tr>
-              <th>Event Date</th>
-              <th>Event Type</th>
-              <th>Aircraft</th>
-              <th>Config Slot Code</th>
-              <th>Config Slot Name</th>
-              <th>Part No</th>
-              <th>Part Description</th>
-              <th>Serial Number</th>
-              <th>Status</th>
-              <th>Barcode</th>
-              <th>Performed By</th>
-            </tr>
-          </thead>
-          <tbody id="events-tbody">
-            <!-- Data loaded via JS -->
-          </tbody>
-        </table>
+    <div class="tab-content active" id="tab-dashboard">
+      <div class="alert-info-banner">
+        <h3>Fleet Dashboard</h3>
+        <p>XXX S/N Alerts and Empty Config Slots broken down by fleet type. Click a card to jump to its detail view for that fleet.</p>
       </div>
-      <div class="pagination" id="pagination">
-        <!-- Pagination controls loaded via JS -->
+      <div class="fleet-dashboard-grid" id="fleet-dashboard-grid">
+        <!-- Per-fleet KPI card pairs loaded via JS -->
       </div>
     </div>
 

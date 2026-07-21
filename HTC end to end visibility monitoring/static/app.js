@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', init);
 const API_BASE = '/api';
 
 // State
-let currentTab = 'tab-all-events';
-let currentPage = 1;
+let currentTab = 'tab-dashboard';
 let currentFilters = {
     fleet: '',
     event_type: '',
@@ -22,7 +21,7 @@ function init() {
     setupEventListeners();
     loadDashboard();
     loadFleetTypes();
-    loadEvents(1);
+    loadFleetDashboard();
     
     // Set default dates if needed, or leave blank
     const savedTheme = localStorage.getItem('htc-theme') || 'dark';
@@ -43,20 +42,20 @@ function setupEventListeners() {
 
     // KPI Cards
     const cardTotal = document.getElementById('card-total');
-    if (cardTotal) cardTotal.addEventListener('click', () => { switchTab('tab-all-events'); });
+    if (cardTotal) cardTotal.addEventListener('click', () => { switchTab('tab-dashboard'); });
     
     const cardInstall = document.getElementById('card-install');
     if (cardInstall) cardInstall.addEventListener('click', () => { 
-        document.getElementById('filter-event-type').value = 'INSTALL';
+        document.getElementById('event-type-filter').value = 'INSTALL';
         document.getElementById('btn-apply-filters').click();
-        switchTab('tab-all-events'); 
+        switchTab('tab-alert-a'); 
     });
     
     const cardRemove = document.getElementById('card-remove');
     if (cardRemove) cardRemove.addEventListener('click', () => { 
-        document.getElementById('filter-event-type').value = 'REMOVE';
+        document.getElementById('event-type-filter').value = 'REMOVE';
         document.getElementById('btn-apply-filters').click();
-        switchTab('tab-all-events'); 
+        switchTab('tab-alert-a'); 
     });
     
     const cardXxx = document.getElementById('card-xxx');
@@ -69,7 +68,7 @@ function setupEventListeners() {
     document.getElementById('btn-apply-filters').addEventListener('click', () => {
         updateFiltersFromUI();
         loadDashboard();
-        if(currentTab === 'tab-all-events') loadEvents(1);
+        if(currentTab === 'tab-dashboard') loadFleetDashboard();
         else if(currentTab === 'tab-alert-a') loadAlertA();
         else if(currentTab === 'tab-alert-b') loadAlertB();
         else if(currentTab === 'tab-alert-c') loadAlertC();
@@ -177,7 +176,7 @@ function switchTab(tabId) {
     currentTab = tabId;
 
     // Load data specific to the tab
-    if (tabId === 'tab-all-events') loadEvents(1);
+    if (tabId === 'tab-dashboard') loadFleetDashboard();
     else if (tabId === 'tab-alert-a') loadAlertA();
     else if (tabId === 'tab-alert-b') loadAlertB();
     else if (tabId === 'tab-alert-c') loadAlertC();
@@ -229,15 +228,69 @@ async function loadFleetTypes() {
 
 }
 
-async function loadEvents(page = 1) {
-    currentPage = page;
-    const qs = buildQueryString({ page, per_page: 50 });
-    const data = await fetchAPI(`/events?${qs}`);
-    
-    if(data && data.events) {
-        renderEventsTable(data.events, 'events-tbody');
-        renderPagination(data.total, data.page, data.per_page);
+async function loadFleetDashboard() {
+    // Fleet breakdown ignores the fleet dropdown itself (it shows all fleets
+    // side-by-side) but respects date/BOM/part-group filters.
+    const qs = buildQueryString({ fleet: '' });
+    const data = await fetchAPI(`/dashboard-by-fleet?${qs}`);
+    if(data && data.fleets) {
+        renderFleetDashboard(data.fleets);
     }
+}
+
+function renderFleetDashboard(fleets) {
+    const container = document.getElementById('fleet-dashboard-grid');
+    if (!container) return;
+    container.innerHTML = '';
+
+    if (!fleets || fleets.length === 0) {
+        container.innerHTML = '<div class="fleet-dashboard-empty">No fleet data available.</div>';
+        return;
+    }
+
+    fleets.forEach(f => {
+        const group = document.createElement('div');
+        group.className = 'fleet-dashboard-group';
+
+        const total = f.xxx_sn_count + f.empty_slots_count;
+
+        group.innerHTML = `
+            <div class="fleet-dashboard-group-header">
+                <h4>${f.fleet}</h4>
+                <span class="fleet-total-badge">${total} open item${total === 1 ? '' : 's'}</span>
+            </div>
+            <div class="fleet-dashboard-cards">
+                <div class="kpi-card critical fleet-card-xxx" data-fleet="${f.fleet}">
+                    <div class="kpi-icon">🔴</div>
+                    <div class="kpi-label">XXX S/N Alerts</div>
+                    <div class="kpi-value">${f.xxx_sn_count}</div>
+                    <div class="kpi-trend">Action required</div>
+                </div>
+                <div class="kpi-card fleet-card-empty" data-fleet="${f.fleet}">
+                    <div class="kpi-icon">⚠️</div>
+                    <div class="kpi-label">Empty Config Slots</div>
+                    <div class="kpi-value">${f.empty_slots_count}</div>
+                    <div class="kpi-trend">Missing components</div>
+                </div>
+            </div>
+        `;
+
+        const xxxCard = group.querySelector('.fleet-card-xxx');
+        xxxCard.addEventListener('click', () => {
+            document.getElementById('fleet-filter').value = f.fleet;
+            updateFiltersFromUI();
+            switchTab('tab-alert-b');
+        });
+
+        const emptyCard = group.querySelector('.fleet-card-empty');
+        emptyCard.addEventListener('click', () => {
+            document.getElementById('fleet-filter').value = f.fleet;
+            updateFiltersFromUI();
+            switchTab('tab-alert-c');
+        });
+
+        container.appendChild(group);
+    });
 }
 
 async function loadAlertA() {
@@ -526,7 +579,7 @@ async function fetchReports() {
             showToast(msg, data.files_loaded > 0 ? 'success' : 'warning');
             if(data.files_loaded > 0) {
                 loadDashboard();
-                if(currentTab === 'tab-all-events') loadEvents(1);
+                if(currentTab === 'tab-dashboard') loadFleetDashboard();
                 else if(currentTab === 'tab-alert-a') loadAlertA();
                 else if(currentTab === 'tab-alert-b') loadAlertB();
             }
@@ -539,36 +592,6 @@ async function fetchReports() {
         overlay.classList.add('hidden');
     }
 }
-
-function renderPagination(total, page, perPage) {
-    const container = document.getElementById('pagination');
-    container.innerHTML = '';
-    
-    if(total === 0) return;
-
-    const totalPages = Math.ceil(total / perPage);
-    
-    const prevBtn = document.createElement('button');
-    prevBtn.className = 'page-btn';
-    prevBtn.innerHTML = '&lt;';
-    prevBtn.disabled = page === 1;
-    prevBtn.onclick = () => loadEvents(page - 1);
-    
-    const info = document.createElement('span');
-    info.className = 'page-info';
-    info.textContent = `Page ${page} of ${totalPages} (${total} total)`;
-    
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'page-btn';
-    nextBtn.innerHTML = '&gt;';
-    nextBtn.disabled = page === totalPages;
-    nextBtn.onclick = () => loadEvents(page + 1);
-
-    container.appendChild(prevBtn);
-    container.appendChild(info);
-    container.appendChild(nextBtn);
-}
-
 
 function exportCSV() {
     const qs = buildQueryString();
