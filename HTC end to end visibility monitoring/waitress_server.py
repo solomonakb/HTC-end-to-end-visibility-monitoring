@@ -1,6 +1,7 @@
 import os
 import csv
 import logging
+from logging.handlers import RotatingFileHandler
 from io import StringIO
 from datetime import datetime, timedelta
 import threading
@@ -9,11 +10,31 @@ from flask import Flask, request, jsonify, render_template, Response
 from waitress import serve
 import database
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# ─── Logging Setup ──────────────────────────────────────────────────────────
+LOG_FILE = 'htc_application.log'
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+formatter = logging.Formatter(
+    '%(asctime)s - %(levelname)s - %(module)s.%(funcName)s - %(message)s'
+)
+file_handler = RotatingFileHandler(LOG_FILE, maxBytes=5 * 1024 * 1024,
+                                   backupCount=5, encoding='utf-8')
+file_handler.setFormatter(formatter)
+root_logger.addHandler(file_handler)
+
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+root_logger.addHandler(stream_handler)
+
 logger = logging.getLogger(__name__)
 
+# ─── Application Init ────────────────────────────────────────────────────────
 app = Flask(__name__)
+
+@app.after_request
+def remove_server_header(response):
+    response.headers.pop('Server', None)
+    return response
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, 'htc_monitor.db')
@@ -24,7 +45,7 @@ NETWORK_SHARE_PATH = r'\\svhqftp03\HCT'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Initialize DB on startup
-database.init_db(DB_PATH)
+# database.init_db(DB_PATH) - Moved to run_server
 
 def check_initial_load():
     """Check if DB is empty and load default Excel if it exists."""
@@ -43,16 +64,17 @@ def auto_fetch_reports():
             logger.info("Starting auto-fetch of reports...")
             files = database.scan_share_directory(NETWORK_SHARE_PATH)
             if files:
-                latest_file = files[0] # (filename, filepath, timestamp)
-                filename, filepath, _ = latest_file
-                if not database.is_file_loaded(DB_PATH, filename):
-                    logger.info(f"Auto-fetching new report: {filename}")
-                    success, count = database.load_excel(DB_PATH, filepath)
-                    if success:
-                        database.mark_file_loaded(DB_PATH, filename, filepath, count, source='network_share')
-                        logger.info(f"Auto-fetch loaded {count} records from {filename}")
-                else:
-                    logger.info(f"Latest file {filename} already loaded.")
+                loaded_any = False
+                for filename, filepath, _ in files:
+                    if not database.is_file_loaded(DB_PATH, filename):
+                        logger.info(f"Auto-fetching new report: {filename}")
+                        success, count = database.load_excel(DB_PATH, filepath)
+                        if success:
+                            database.mark_file_loaded(DB_PATH, filename, filepath, count, source='network_share')
+                            logger.info(f"Auto-fetch loaded {count} records from {filename}")
+                            loaded_any = True
+                if not loaded_any:
+                    logger.info("All found files are already loaded.")
             else:
                 logger.info(f"No reports found in {NETWORK_SHARE_PATH} during auto-fetch.")
             
@@ -66,8 +88,6 @@ def start_scheduler():
     t = threading.Thread(target=auto_fetch_reports, daemon=True)
     t.start()
 
-check_initial_load()
-start_scheduler()
 
 
 # ─── Page Routes ──────────────────────────────────────────────────────────────
@@ -82,13 +102,14 @@ def index():
 @app.route('/api/dashboard', methods=['GET'])
 def dashboard():
     fleet = request.args.get('fleet')
+    aircraft = request.args.get('aircraft')
     date_from = request.args.get('date_from')
     date_to = request.args.get('date_to')
     bom = request.args.get('bom')
     part_group = request.args.get('part_group')
     
     try:
-        stats = database.get_dashboard_stats(DB_PATH, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        stats = database.get_dashboard_stats(DB_PATH, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
         return jsonify(stats)
     except Exception as e:
         logger.error(f"Dashboard error: {e}")
@@ -98,6 +119,7 @@ def dashboard():
 @app.route('/api/events', methods=['GET'])
 def events():
     fleet = request.args.get('fleet')
+    aircraft = request.args.get('aircraft')
     event_type = request.args.get('event_type')
     date_from = request.args.get('date_from')
     date_to = request.args.get('date_to')
@@ -113,7 +135,7 @@ def events():
 
     try:
         results = database.get_events(
-            DB_PATH, fleet=fleet, event_type=event_type,
+            DB_PATH, fleet=fleet, aircraft=aircraft, event_type=event_type,
             date_from=date_from, date_to=date_to,
             search=search, bom=bom, part_group=part_group,
             page=page, per_page=per_page
@@ -133,13 +155,15 @@ def events():
 @app.route('/api/alerts/install-remove', methods=['GET'])
 def alert_a():
     fleet = request.args.get('fleet')
+    aircraft = request.args.get('aircraft')
+    event_type = request.args.get('event_type')
     date_from = request.args.get('date_from')
     date_to = request.args.get('date_to')
     bom = request.args.get('bom')
     part_group = request.args.get('part_group')
 
     try:
-        rows = database.get_alert_a_events(DB_PATH, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        rows = database.get_alert_a_events(DB_PATH, fleet=fleet, aircraft=aircraft, event_type=event_type, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
         return jsonify({"events": rows, "total": len(rows)})
     except Exception as e:
         logger.error(f"Alert A error: {e}")
@@ -149,13 +173,14 @@ def alert_a():
 @app.route('/api/alerts/xxx-sn', methods=['GET'])
 def alert_b():
     fleet = request.args.get('fleet')
+    aircraft = request.args.get('aircraft')
     date_from = request.args.get('date_from')
     date_to = request.args.get('date_to')
     bom = request.args.get('bom')
     part_group = request.args.get('part_group')
 
     try:
-        rows = database.get_alert_b_events(DB_PATH, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        rows = database.get_alert_b_events(DB_PATH, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
         return jsonify({"alerts": rows, "total": len(rows)})
     except Exception as e:
         logger.error(f"Alert B error: {e}")
@@ -167,13 +192,14 @@ def alert_mmc():
     """Alert C — Missing Mandatory Component.
     Flags REMOVE events where no reinstall occurred within 7 days."""
     fleet = request.args.get('fleet')
+    aircraft = request.args.get('aircraft')
     date_from = request.args.get('date_from')
     date_to = request.args.get('date_to')
     bom = request.args.get('bom')
     part_group = request.args.get('part_group')
 
     try:
-        alerts = database.get_mmc_alerts(DB_PATH, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        alerts = database.get_mmc_alerts(DB_PATH, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
         critical = sum(1 for a in alerts if a.get('mmc_severity') == 'CRITICAL')
         warning = sum(1 for a in alerts if a.get('mmc_severity') == 'WARNING')
         return jsonify({
@@ -191,13 +217,14 @@ def alert_mmc():
 def dashboard_by_fleet():
     """XXX S/N Alert and Empty Config Slot counts broken down per fleet type,
     for the Dashboard tab's per-fleet KPI cards."""
+    aircraft = request.args.get('aircraft')
     date_from = request.args.get('date_from')
     date_to = request.args.get('date_to')
     bom = request.args.get('bom')
     part_group = request.args.get('part_group')
 
     try:
-        breakdown = database.get_fleet_dashboard(DB_PATH, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        breakdown = database.get_fleet_dashboard(DB_PATH, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
         return jsonify({"fleets": breakdown})
     except Exception as e:
         logger.error(f"Dashboard by fleet error: {e}")
@@ -234,6 +261,7 @@ def part_groups():
 @app.route('/api/export', methods=['GET'])
 def export_csv():
     fleet = request.args.get('fleet')
+    aircraft = request.args.get('aircraft')
     event_type = request.args.get('event_type')
     date_from = request.args.get('date_from')
     date_to = request.args.get('date_to')
@@ -243,7 +271,7 @@ def export_csv():
 
     try:
         results = database.get_events(
-            DB_PATH, fleet=fleet, event_type=event_type,
+            DB_PATH, fleet=fleet, aircraft=aircraft, event_type=event_type,
             date_from=date_from, date_to=date_to,
             search=search, bom=bom, part_group=part_group,
             page=1, per_page=1000000
@@ -388,13 +416,18 @@ def fetch_reports():
             else:
                 logger.warning(f"Failed to load {filename}")
 
+        if files_loaded == 0:
+            message = f"Found {len(files)} file(s) on the network share, but they have all been imported previously."
+        else:
+            message = f"Successfully loaded {files_loaded} new report(s) with {total_records} records."
+
         return jsonify({
             "success": True,
             "share_path": NETWORK_SHARE_PATH,
             "files_loaded": files_loaded,
             "total_records": total_records,
-            "files": loaded_details,
-            "message": f"Loaded {files_loaded} file(s) with {total_records} total records."
+            "details": loaded_details,
+            "message": message
         })
     except Exception as e:
         logger.error(f"Fetch reports error: {e}")
@@ -428,10 +461,29 @@ def loaded_files():
         return jsonify({"error": str(e)}), 500
 
 
+# ─── Run ─────────────────────────────────────────────────────────────────────
+def run_server():
+    host = os.environ.get('FLASK_HOST', '0.0.0.0')
+    port = int(os.environ.get('FLASK_PORT', 5000))
+
+    # ── Initialize Database ──────────────────────────────────────────────────
+    database.init_db(DB_PATH)
+    logger.info('✅ Database tables checked / created.')
+
+    # ── Initial Load and Scheduler ───────────────────────────────────────────
+    check_initial_load()
+    start_scheduler()
+    logger.info('✅ Scheduler started: checking for reports every 2 hours.')
+
+    logger.info('=' * 65)
+    logger.info('  HTC End-to-End Visibility Monitoring Dashboard')
+    logger.info('  Ethiopian Airlines | MPTC Engineering')
+    logger.info(f'🚀 Portal starting on http://{host}:{port}')
+    logger.info('=' * 65)
+
+    # Single serve() call
+    serve(app, host=host, port=port, threads=8,
+          clear_untrusted_proxy_headers=True, ident=None)
+
 if __name__ == '__main__':
-    print('=' * 60)
-    print('  HTC End-to-End Visibility Monitoring Dashboard')
-    print('  Ethiopian Airlines | MPTC Engineering')
-    print('  Running at http://localhost:5000')
-    print('=' * 60)
-    serve(app, host='0.0.0.0', port=5000)
+    run_server()

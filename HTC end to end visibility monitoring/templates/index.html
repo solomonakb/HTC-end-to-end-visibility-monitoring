@@ -70,6 +70,10 @@
       </select>
     </div>
     <div class="filter-group">
+      <label for="aircraft-filter">Aircraft</label>
+      <input type="text" id="aircraft-filter" placeholder="e.g. ET-A...">
+    </div>
+    <div class="filter-group">
       <label for="event-type-filter">Event Type</label>
       <select id="event-type-filter">
         <option value="">All</option>
@@ -99,6 +103,7 @@
     </div>
     <div class="filter-actions">
       <button id="btn-apply-filters" class="btn btn-primary">Apply Filters</button>
+      <button id="btn-clear-filters" class="btn btn-secondary">Clear</button>
       <button id="btn-export-csv" class="btn btn-secondary">Export CSV</button>
       <button id="btn-fetch-reports" class="btn btn-gold" title="Scan \\svhqftp03\HCT for new bi-weekly reports">📡 Fetch Reports</button>
     </div>
@@ -166,13 +171,15 @@
         <table id="alert-b-table">
           <thead>
             <tr>
-              <th>⚠️ Priority</th>
               <th>Event Date</th>
               <th>Aircraft</th>
-              <th>Config Slot</th>
+              <th>Assmbl BOM (Config Slot Code)</th>
+              <th>FG_CONFIG_SLOT</th>
               <th>Part No</th>
               <th>Part Desc</th>
               <th>Serial Number</th>
+              <th>FG_INV_BARCODE</th>
+              <th>FG_PERFORMED_BY_</th>
               <th>Resolution Deadline</th>
               <th>Status</th>
               <th>Actions</th>

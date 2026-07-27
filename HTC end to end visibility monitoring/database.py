@@ -143,7 +143,10 @@ def scan_share_directory(share_path):
     results = []
     try:
         if os.path.isdir(share_path):
-            for entry in os.listdir(share_path):
+            logger.info(f"scan_share_directory: '{share_path}' is a valid directory. Scanning...")
+            files = os.listdir(share_path)
+            logger.info(f"scan_share_directory: Found {len(files)} items.")
+            for entry in files:
                 lower_entry = entry.lower()
                 if (lower_entry.endswith('.xlsx') or lower_entry.endswith('.xls')) and not entry.startswith('~$'):
                     filepath = os.path.join(share_path, entry)
@@ -151,12 +154,11 @@ def scan_share_directory(share_path):
                     results.append((entry, filepath, dt))
             # Sort by timestamp, latest first
             results.sort(key=lambda x: x[2], reverse=True)
-    except PermissionError:
-        logger.error(f"Permission denied accessing: {share_path}")
-    except FileNotFoundError:
-        logger.error(f"Share path not found: {share_path}")
+            logger.info(f"scan_share_directory: Returning {len(results)} valid excel files.")
+        else:
+            logger.warning(f"scan_share_directory: '{share_path}' is NOT a directory or not accessible.")
     except Exception as e:
-        logger.error(f"Error scanning share: {e}")
+        logger.error(f"Error scanning share: {e}", exc_info=True)
     return results
 
 def get_loaded_files(db_path):
@@ -336,7 +338,7 @@ def _dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
-def get_events(db_path, fleet=None, event_type=None, date_from=None, date_to=None, search=None, bom=None, part_group=None, page=1, per_page=50):
+def get_events(db_path, fleet=None, aircraft=None, event_type=None, date_from=None, date_to=None, search=None, bom=None, part_group=None, page=1, per_page=50):
     conn = sqlite3.connect(db_path)
     conn.row_factory = _dict_factory
     cursor = conn.cursor()
@@ -347,6 +349,9 @@ def get_events(db_path, fleet=None, event_type=None, date_from=None, date_to=Non
     if fleet:
         query += " AND assembly_cd = ?"
         params.append(fleet)
+    if aircraft:
+        query += " AND aircraft LIKE ?"
+        params.append(f"%{aircraft}%")
     if event_type:
         query += " AND event_type = ?"
         params.append(event_type)
@@ -355,7 +360,7 @@ def get_events(db_path, fleet=None, event_type=None, date_from=None, date_to=Non
         params.append(date_from)
     if date_to:
         query += " AND event_dt <= ?"
-        params.append(date_to)
+        params.append(date_to + 'T23:59:59' if len(date_to) == 10 else date_to)
     if bom:
         query += " AND config_slot_code LIKE ?"
         params.append(f"%{bom}%")
@@ -387,7 +392,7 @@ def get_events(db_path, fleet=None, event_type=None, date_from=None, date_to=Non
         "per_page": per_page
     }
 
-def get_dashboard_stats(db_path, fleet=None, date_from=None, date_to=None, bom=None, part_group=None):
+def get_dashboard_stats(db_path, fleet=None, aircraft=None, date_from=None, date_to=None, bom=None, part_group=None):
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
@@ -408,12 +413,15 @@ def get_dashboard_stats(db_path, fleet=None, date_from=None, date_to=None, bom=N
     if fleet:
         base_query += " AND assembly_cd = ?"
         params.append(fleet)
+    if aircraft:
+        base_query += " AND aircraft LIKE ?"
+        params.append(f"%{aircraft}%")
     if date_from:
         base_query += " AND event_dt >= ?"
         params.append(date_from)
     if date_to:
         base_query += " AND event_dt <= ?"
-        params.append(date_to)
+        params.append(date_to + 'T23:59:59' if len(date_to) == 10 else date_to)
     if bom:
         base_query += " AND config_slot_code LIKE ?"
         params.append(f"%{bom}%")
@@ -434,7 +442,7 @@ def get_dashboard_stats(db_path, fleet=None, date_from=None, date_to=None, bom=N
     stats["xxx_sn_count"] = cursor.fetchone()[0]
     
     # Calculate Empty Slots (MMC) based on the actual logic with filters
-    mmc_alerts = get_mmc_alerts(db_path, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+    mmc_alerts = get_mmc_alerts(db_path, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
     stats["empty_slots_count"] = len(mmc_alerts)
     
     cursor.execute("SELECT assembly_cd, COUNT(*) FROM htc_events GROUP BY assembly_cd")
@@ -445,53 +453,32 @@ def get_dashboard_stats(db_path, fleet=None, date_from=None, date_to=None, bom=N
     conn.close()
     return stats
 
-def get_alert_a_events(db_path, fleet=None, date_from=None, date_to=None, bom=None, part_group=None):
+def get_alert_a_events(db_path, fleet=None, aircraft=None, event_type=None, date_from=None, date_to=None, bom=None, part_group=None):
     conn = sqlite3.connect(db_path)
     conn.row_factory = _dict_factory
     cursor = conn.cursor()
     
-    query = "SELECT * FROM htc_events WHERE event_type IN ('INSTALL', 'REMOVE')"
+    query = "SELECT * FROM htc_events WHERE 1=1"
     params = []
     
-    if fleet:
-        query += " AND assembly_cd = ?"
-        params.append(fleet)
-    if date_from:
-        query += " AND event_dt >= ?"
-        params.append(date_from)
-    if date_to:
-        query += " AND event_dt <= ?"
-        params.append(date_to)
-    if bom:
-        query += " AND config_slot_code = ?"
-        params.append(bom)
-    if part_group:
-        query += " AND part_group_name = ?"
-        params.append(part_group)
+    if event_type and event_type in ['INSTALL', 'REMOVE']:
+        query += " AND event_type = ?"
+        params.append(event_type)
+    else:
+        query += " AND event_type IN ('INSTALL', 'REMOVE')"
         
-    query += " ORDER BY event_dt DESC"
-    cursor.execute(query, params)
-    rows = cursor.fetchall()
-    conn.close()
-    return rows
-
-def get_alert_b_events(db_path, fleet=None, date_from=None, date_to=None, bom=None, part_group=None):
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = _dict_factory
-    cursor = conn.cursor()
-    
-    query = "SELECT * FROM htc_events WHERE has_xxx_sn = 1"
-    params = []
-    
     if fleet:
         query += " AND assembly_cd = ?"
         params.append(fleet)
+    if aircraft:
+        query += " AND aircraft LIKE ?"
+        params.append(f"%{aircraft}%")
     if date_from:
         query += " AND event_dt >= ?"
         params.append(date_from)
     if date_to:
         query += " AND event_dt <= ?"
-        params.append(date_to)
+        params.append(date_to + 'T23:59:59' if len(date_to) == 10 else date_to)
     if bom:
         query += " AND config_slot_code LIKE ?"
         params.append(f"%{bom}%")
@@ -499,7 +486,51 @@ def get_alert_b_events(db_path, fleet=None, date_from=None, date_to=None, bom=No
         query += " AND part_group_name LIKE ?"
         params.append(f"%{part_group}%")
         
-    query += " ORDER BY id DESC"
+    query += " ORDER BY event_dt DESC"
+    cursor.execute(query, params)
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+
+def get_alert_b_events(db_path, fleet=None, aircraft=None, date_from=None, date_to=None, bom=None, part_group=None):
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = _dict_factory
+    cursor = conn.cursor()
+    
+    query = """
+    SELECT e1.* FROM htc_events e1
+    WHERE e1.has_xxx_sn = 1
+    AND e1.event_type = 'INSTALL'
+    AND NOT EXISTS (
+        SELECT 1 FROM htc_events e2 
+        WHERE e2.aircraft = e1.aircraft 
+          AND e2.config_slot_code = e1.config_slot_code 
+          AND e2.config_slot = e1.config_slot 
+          AND (e2.event_dt > e1.event_dt OR (e2.event_dt = e1.event_dt AND e2.id > e1.id))
+    )
+    """
+    params = []
+    
+    if fleet:
+        query += " AND e1.assembly_cd = ?"
+        params.append(fleet)
+    if aircraft:
+        query += " AND e1.aircraft LIKE ?"
+        params.append(f"%{aircraft}%")
+    if date_from:
+        query += " AND e1.event_dt >= ?"
+        params.append(date_from)
+    if date_to:
+        query += " AND e1.event_dt <= ?"
+        params.append(date_to + 'T23:59:59' if len(date_to) == 10 else date_to)
+    if bom:
+        query += " AND e1.config_slot_code LIKE ?"
+        params.append(f"%{bom}%")
+    if part_group:
+        query += " AND e1.part_group_name LIKE ?"
+        params.append(f"%{part_group}%")
+        
+    query += " GROUP BY e1.config_slot, e1.status_cd, e1.inventory_key, e1.performed_by_user, e1.performed_by_username ORDER BY e1.id DESC"
     
     cursor.execute(query, params)
     rows = cursor.fetchall()
@@ -540,7 +571,7 @@ def _get_inv_key_num(inv_key_str):
     except:
         return 0
 
-def get_mmc_alerts(db_path, fleet=None, date_from=None, date_to=None, bom=None, part_group=None):
+def get_mmc_alerts(db_path, fleet=None, aircraft=None, date_from=None, date_to=None, bom=None, part_group=None):
     """Detect Missing Mandatory Component (MMC) alerts.
     
     A removed part must be reinstalled on the same aircraft + config slot
@@ -557,12 +588,15 @@ def get_mmc_alerts(db_path, fleet=None, date_from=None, date_to=None, bom=None, 
     if fleet:
         remove_query += " AND assembly_cd = ?"
         params.append(fleet)
+    if aircraft:
+        remove_query += " AND aircraft LIKE ?"
+        params.append(f"%{aircraft}%")
     if date_from:
         remove_query += " AND event_dt >= ?"
         params.append(date_from)
     if date_to:
         remove_query += " AND event_dt <= ?"
-        params.append(date_to)
+        params.append(date_to + 'T23:59:59' if len(date_to) == 10 else date_to)
     if bom:
         remove_query += " AND config_slot_code LIKE ?"
         params.append(f"%{bom}%")
@@ -602,10 +636,11 @@ def get_mmc_alerts(db_path, fleet=None, date_from=None, date_to=None, bom=None, 
     
     for removal_dt, removal in removals:
         aircraft = removal.get('aircraft', '')
-        config_slot = removal.get('config_slot_code', '')
+        config_slot_code = removal.get('config_slot_code', '')
+        config_slot = removal.get('config_slot', '')
         rem_inv_num = _get_inv_key_num(removal.get('inventory_key', ''))
         
-        # Find the earliest INSTALL on the same aircraft + config_slot that hasn't been claimed
+        # Find the earliest INSTALL on the same aircraft + config_slot_code + config_slot that hasn't been claimed
         matching_install = None
         for inst_dt, inst in installs:
             inst_id = inst.get('id')
@@ -613,7 +648,9 @@ def get_mmc_alerts(db_path, fleet=None, date_from=None, date_to=None, bom=None, 
                 continue
                 
             if (inst.get('aircraft', '') == aircraft and 
-                inst.get('config_slot_code', '') == config_slot):
+                inst.get('config_slot_code', '') == config_slot_code and
+                inst.get('config_slot', '') == config_slot and
+                inst.get('has_xxx_sn') == 0):
                 
                 inst_inv_num = _get_inv_key_num(inst.get('inventory_key', ''))
                 
@@ -627,24 +664,10 @@ def get_mmc_alerts(db_path, fleet=None, date_from=None, date_to=None, bom=None, 
         days_since = (now - removal_dt).days
         
         if matching_install:
-            # There is a reinstall — check if it was within 7 days
-            inst_dt = _parse_event_date(matching_install.get('event_dt'))
-            days_to_reinstall = (inst_dt - removal_dt).days if inst_dt else 0
-            if days_to_reinstall <= 7:
-                continue  # Reinstalled on time — no alert
-            
-            # Reinstalled late
-            alert = dict(removal)
-            alert['days_since_removal'] = days_since
-            alert['days_to_reinstall'] = days_to_reinstall
-            alert['mmc_severity'] = 'CRITICAL'
-            alert['reinstall_status'] = 'REINSTALLED_LATE'
-            alert['reinstall_date'] = matching_install.get('event_dt', '')
-            alert['reinstall_sn'] = matching_install.get('serial_number', '')
-            alert['_parsed_dt'] = removal_dt
-            mmc_alerts.append(alert)
+            # A valid SN was installed; the MMC issue is resolved and closed
+            continue
         else:
-            # No reinstall found at all
+            # No valid reinstall found at all - remains open
             if days_since >= 3:
                 alert = dict(removal)
                 alert['days_since_removal'] = days_since
@@ -667,19 +690,20 @@ def get_mmc_alerts(db_path, fleet=None, date_from=None, date_to=None, bom=None, 
     
     return mmc_alerts
 
-def get_fleet_dashboard(db_path, date_from=None, date_to=None, bom=None, part_group=None):
+def get_fleet_dashboard(db_path, aircraft=None, date_from=None, date_to=None, bom=None, part_group=None):
     """Returns XXX S/N Alert counts and Empty Config Slot (MMC) counts, broken
     down per fleet type, for the Dashboard tab's per-fleet KPI cards."""
     fleets = get_fleet_types(db_path)
-
+    
     breakdown = []
     for fleet in fleets:
-        xxx_events = get_alert_b_events(db_path, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
-        mmc_alerts = get_mmc_alerts(db_path, fleet=fleet, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        if not fleet: continue
+        alert_b = get_alert_b_events(db_path, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+        mmc = get_mmc_alerts(db_path, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
         breakdown.append({
             "fleet": fleet,
-            "xxx_sn_count": len(xxx_events),
-            "empty_slots_count": len(mmc_alerts)
+            "xxx_sn_count": len(alert_b),
+            "empty_slots_count": len(mmc)
         })
 
     # Sort fleets with the most XXX S/N alerts first so the busiest fleets surface at the top

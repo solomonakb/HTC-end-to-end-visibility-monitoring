@@ -8,6 +8,7 @@ const API_BASE = '/api';
 let currentTab = 'tab-dashboard';
 let currentFilters = {
     fleet: '',
+    aircraft: '',
     event_type: '',
     date_from: '',
     date_to: '',
@@ -91,6 +92,7 @@ function setupEventListeners() {
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
             document.getElementById('fleet-filter').value = '';
+            document.getElementById('aircraft-filter').value = '';
             document.getElementById('event-type-filter').value = '';
             document.getElementById('date-from').value = '';
             document.getElementById('date-to').value = '';
@@ -142,6 +144,7 @@ function toggleTheme() {
 
 function updateFiltersFromUI() {
     currentFilters.fleet = document.getElementById('fleet-filter').value;
+    currentFilters.aircraft = document.getElementById('aircraft-filter').value;
     currentFilters.event_type = document.getElementById('event-type-filter').value;
     currentFilters.date_from = document.getElementById('date-from').value;
     currentFilters.date_to = document.getElementById('date-to').value;
@@ -300,10 +303,13 @@ async function loadAlertA() {
         let events = data.events;
         if (currentFilters.search) {
             const s = currentFilters.search.toLowerCase();
+            const safeLower = (val) => val ? String(val).toLowerCase() : '';
             events = events.filter(e => 
-                (e.aircraft && e.aircraft.toLowerCase().includes(s)) ||
-                (e.part_no && e.part_no.toLowerCase().includes(s)) ||
-                (e.config_slot_code && e.config_slot_code.toLowerCase().includes(s))
+                safeLower(e.aircraft).includes(s) ||
+                safeLower(e.part_no).includes(s) ||
+                safeLower(e.config_slot_code).includes(s) ||
+                safeLower(e.serial_number).includes(s) ||
+                safeLower(e.barcode).includes(s)
             );
         }
         document.getElementById('alert-a-summary').innerHTML = `<p>Found <strong>${events.length}</strong> installation/removal events matching criteria.</p>`;
@@ -315,8 +321,19 @@ async function loadAlertB() {
     const qs = buildQueryString();
     const data = await fetchAPI(`/alerts/xxx-sn?${qs}`);
     if(data && data.alerts) {
-        document.getElementById('alert-b-summary').innerHTML = `<p>Found <strong>${data.total}</strong> critical placeholder S/N issues.</p>`;
-        renderAlertBTable(data.alerts, 'alert-b-tbody');
+        let alerts = data.alerts;
+        if (currentFilters.search) {
+            const s = currentFilters.search.toLowerCase();
+            const safeLower = (val) => val ? String(val).toLowerCase() : '';
+            alerts = alerts.filter(e => 
+                safeLower(e.aircraft).includes(s) ||
+                safeLower(e.part_no).includes(s) ||
+                safeLower(e.serial_number).includes(s) ||
+                safeLower(e.config_slot_code).includes(s)
+            );
+        }
+        document.getElementById('alert-b-summary').innerHTML = `<p>Found <strong>${alerts.length}</strong> critical placeholder S/N issues.</p>`;
+        renderAlertBTable(alerts, 'alert-b-tbody');
     }
 }
 
@@ -324,8 +341,23 @@ async function loadAlertC() {
     const qs = buildQueryString();
     const data = await fetchAPI(`/alerts/mmc?${qs}`);
     if(data && data.alerts) {
-        document.getElementById('alert-c-summary').innerHTML = `<p>Found <strong>${data.total}</strong> missing mandatory components (<strong>${data.critical_count}</strong> critical, <strong>${data.warning_count}</strong> warnings).</p>`;
-        renderAlertCTable(data.alerts, 'alert-c-tbody');
+        let alerts = data.alerts;
+        if (currentFilters.search) {
+            const s = currentFilters.search.toLowerCase();
+            const safeLower = (val) => val ? String(val).toLowerCase() : '';
+            alerts = alerts.filter(e => 
+                safeLower(e.aircraft).includes(s) ||
+                safeLower(e.part_no).includes(s) ||
+                safeLower(e.barcode).includes(s) ||
+                safeLower(e.config_slot_code).includes(s)
+            );
+        }
+        
+        const critical = alerts.filter(a => a.mmc_severity === 'CRITICAL').length;
+        const warning = alerts.filter(a => a.mmc_severity === 'WARNING').length;
+        
+        document.getElementById('alert-c-summary').innerHTML = `<p>Found <strong>${alerts.length}</strong> missing mandatory components (<strong>${critical}</strong> critical, <strong>${warning}</strong> warnings).</p>`;
+        renderAlertCTable(alerts, 'alert-c-tbody');
     }
 }
 
@@ -381,7 +413,7 @@ function renderAlertBTable(events, tbodyId) {
     tbody.innerHTML = '';
     
     if(events.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="10" style="text-align: center;">No critical alerts found</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="12" style="text-align: center;">No critical alerts found</td></tr>';
         return;
     }
 
@@ -397,13 +429,15 @@ function renderAlertBTable(events, tbodyId) {
         }
 
         tr.innerHTML = `
-            <td><span class="badge badge-critical">CRITICAL</span></td>
             <td>${formatDate(evt.event_dt)}</td>
             <td>${evt.aircraft || '-'}</td>
             <td>${evt.config_slot_code || '-'}</td>
+            <td>${evt.config_slot || '-'}</td>
             <td>${evt.part_no || '-'}</td>
             <td>${evt.part_desc || '-'}</td>
             <td><span class="badge badge-critical">${evt.serial_number}</span></td>
+            <td>${evt.barcode || '-'}</td>
+            <td>${evt.performed_by_username || evt.performed_by_user || '-'}</td>
             <td>${deadlineHtml}</td>
             <td>PENDING</td>
             <td>
@@ -575,7 +609,7 @@ async function fetchReports() {
         if(res.ok && data.success) {
             const msg = data.files_loaded > 0 
                 ? `Loaded ${data.files_loaded} new report(s) with ${data.total_records} records from network share.`
-                : 'No new report files found on network share.';
+                : (data.message || 'No new report files found on network share.');
             showToast(msg, data.files_loaded > 0 ? 'success' : 'warning');
             if(data.files_loaded > 0) {
                 loadDashboard();
