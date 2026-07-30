@@ -265,13 +265,13 @@ function renderFleetDashboard(fleets) {
             <div class="fleet-dashboard-cards">
                 <div class="kpi-card critical fleet-card-xxx" data-fleet="${f.fleet}">
                     <div class="kpi-icon">🔴</div>
-                    <div class="kpi-label">XXX S/N Alerts</div>
+                    <div class="kpi-label" style="color: #FF4500;">XXX S/N Alerts</div>
                     <div class="kpi-value">${f.xxx_sn_count}</div>
                     <div class="kpi-trend">Action required</div>
                 </div>
                 <div class="kpi-card fleet-card-empty" data-fleet="${f.fleet}">
                     <div class="kpi-icon">⚠️</div>
-                    <div class="kpi-label">Empty Config Slots</div>
+                    <div class="kpi-label" style="color: #FF0000;">Empty Config Slots</div>
                     <div class="kpi-value">${f.empty_slots_count}</div>
                     <div class="kpi-trend">Missing components</div>
                 </div>
@@ -417,16 +417,22 @@ function renderAlertBTable(events, tbodyId) {
         return;
     }
 
+    events.sort((a, b) => {
+        const aHasHTC = a.config_slot_code && a.config_slot_code.includes('-HTC');
+        const bHasHTC = b.config_slot_code && b.config_slot_code.includes('-HTC');
+        if (aHasHTC && !bHasHTC) return -1;
+        if (!aHasHTC && bHasHTC) return 1;
+        return 0;
+    });
+
     events.forEach(evt => {
         const tr = document.createElement('tr');
         
-        const deadlineInfo = calculateDeadline(evt.event_dt);
-        let deadlineHtml = '';
-        if(deadlineInfo.overdue) {
-            deadlineHtml = `<span style="color: var(--color-danger); font-weight: bold;">OVERDUE (${Math.abs(deadlineInfo.hours)}h)</span>`;
-        } else {
-            deadlineHtml = `<span style="color: var(--color-secondary);">${deadlineInfo.hours}h remaining</span>`;
-        }
+        const now = new Date();
+        const eventDate = new Date(evt.event_dt);
+        const diffMs = now - eventDate;
+        const daysOverdue = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+        const daysHtml = `<span style="${daysOverdue >= 1 ? 'color: var(--color-danger); font-weight: bold;' : ''}">${daysOverdue} days</span>`;
 
         tr.innerHTML = `
             <td>${formatDate(evt.event_dt)}</td>
@@ -438,7 +444,7 @@ function renderAlertBTable(events, tbodyId) {
             <td><span class="badge badge-critical">${evt.serial_number}</span></td>
             <td>${evt.barcode || '-'}</td>
             <td>${evt.performed_by_username || evt.performed_by_user || '-'}</td>
-            <td>${deadlineHtml}</td>
+            <td>${daysHtml}</td>
             <td>PENDING</td>
             <td>
                 <button class="btn btn-primary btn-sm" onclick="resolveAlertB('${evt.barcode}', '${evt.aircraft}', '${evt.config_slot_code}', '${evt.part_no}', '${evt.serial_number}', '${evt.event_dt}')">Resolve</button>
@@ -456,6 +462,14 @@ function renderAlertCTable(events, tbodyId) {
         tbody.innerHTML = '<tr><td colspan="9" style="text-align: center;">No MMC alerts found</td></tr>';
         return;
     }
+
+    events.sort((a, b) => {
+        const aHasHTC = a.config_slot_code && a.config_slot_code.includes('-HTC');
+        const bHasHTC = b.config_slot_code && b.config_slot_code.includes('-HTC');
+        if (aHasHTC && !bHasHTC) return -1;
+        if (!aHasHTC && bHasHTC) return 1;
+        return 0;
+    });
 
     events.forEach(evt => {
         const tr = document.createElement('tr');

@@ -42,13 +42,13 @@
     </div>
     <div class="kpi-card critical" id="card-xxx">
       <div class="kpi-icon">🔴</div>
-      <div class="kpi-label">XXX S/N Alerts</div>
+      <div class="kpi-label" style="color: #FF4500;">XXX S/N Alerts</div>
       <div class="kpi-value" id="kpi-xxx">0</div>
       <div class="kpi-trend">Action required</div>
     </div>
     <div class="kpi-card" id="card-empty">
       <div class="kpi-icon">⚠️</div>
-      <div class="kpi-label">Empty Config Slots</div>
+      <div class="kpi-label" style="color: #FF0000;">Empty Config Slots</div>
       <div class="kpi-value" id="kpi-empty">0</div>
       <div class="kpi-trend">Missing components</div>
     </div>
@@ -152,7 +152,7 @@
 
     <div class="tab-content hidden" id="tab-alert-b">
       <div class="alert-info-banner alert-b-banner">
-        <h3>⚠️ Alert B — HTC XXX Serial Number Monitoring [ACTION REQUIRED]</h3>
+        <h3>⚠️ Alert B — <span style="color: #FF4500;">HTC XXX Serial Number</span> Monitoring [ACTION REQUIRED]</h3>
         <p>Parts installed with placeholder serial numbers requiring immediate resolution</p>
       </div>
       <div class="alert-b-summary" id="alert-b-summary"></div>
@@ -179,8 +179,8 @@
               <th>Part Desc</th>
               <th>Serial Number</th>
               <th>FG_INV_BARCODE</th>
-              <th>FG_PERFORMED_BY_</th>
-              <th>Resolution Deadline</th>
+              <th>Performed By</th>
+              <th>Days Overdue</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -194,7 +194,7 @@
 
     <div class="tab-content hidden" id="tab-alert-c">
       <div class="alert-info-banner" style="border-left: 4px solid var(--color-danger);">
-        <h3>🚨 Alert C — Missing Mandatory Component (MMC)</h3>
+        <h3>🚨 Alert C — <span style="color: #FF0000;">Missing Mandatory Component (MMC)</span></h3>
         <p>Hard Time Components removed and not reinstalled within 7 days.</p>
       </div>
       <div class="alert-c-summary" id="alert-c-summary"></div>
@@ -205,7 +205,7 @@
             <tr>
               <th>Removal Date</th>
               <th>Aircraft</th>
-              <th>Config Slot</th>
+              <th>Assmbl BOM (Config Slot Code)</th>
               <th>Part No</th>
               <th>Part Group</th>
               <th>Barcode</th>
@@ -237,7 +237,7 @@
               <th>ID</th>
               <th>Alert Date</th>
               <th>Aircraft</th>
-              <th>Config Slot</th>
+              <th>Assmbl BOM (Config Slot Code)</th>
               <th>Part No</th>
               <th>Original S/N</th>
               <th>Resolved S/N</th>
