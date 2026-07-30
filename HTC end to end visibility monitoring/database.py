@@ -406,42 +406,14 @@ def get_dashboard_stats(db_path, fleet=None, aircraft=None, date_from=None, date
         "fleet_breakdown": {}
     }
     
-    # Base query logic for filters
-    base_query = " FROM htc_events WHERE 1=1"
-    params = []
+    all_events = get_alert_a_events(db_path, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+    stats["total_events"] = len(all_events)
+    stats["install_count"] = sum(1 for e in all_events if e['event_type'] == 'INSTALL')
+    stats["remove_count"] = sum(1 for e in all_events if e['event_type'] == 'REMOVE')
     
-    if fleet:
-        base_query += " AND assembly_cd = ?"
-        params.append(fleet)
-    if aircraft:
-        base_query += " AND aircraft LIKE ?"
-        params.append(f"%{aircraft}%")
-    if date_from:
-        base_query += " AND event_dt >= ?"
-        params.append(date_from)
-    if date_to:
-        base_query += " AND event_dt <= ?"
-        params.append(date_to + 'T23:59:59' if len(date_to) == 10 else date_to)
-    if bom:
-        base_query += " AND config_slot_code LIKE ?"
-        params.append(f"%{bom}%")
-    if part_group:
-        base_query += " AND part_group_name LIKE ?"
-        params.append(f"%{part_group}%")
-        
-    cursor.execute("SELECT COUNT(*)" + base_query, params)
-    stats["total_events"] = cursor.fetchone()[0]
+    alert_b = get_alert_b_events(db_path, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
+    stats["xxx_sn_count"] = len(alert_b)
     
-    cursor.execute("SELECT COUNT(*)" + base_query + " AND event_type = 'INSTALL'", params)
-    stats["install_count"] = cursor.fetchone()[0]
-    
-    cursor.execute("SELECT COUNT(*)" + base_query + " AND event_type = 'REMOVE'", params)
-    stats["remove_count"] = cursor.fetchone()[0]
-    
-    cursor.execute("SELECT COUNT(*)" + base_query + " AND has_xxx_sn = 1", params)
-    stats["xxx_sn_count"] = cursor.fetchone()[0]
-    
-    # Calculate Empty Slots (MMC) based on the actual logic with filters
     mmc_alerts = get_mmc_alerts(db_path, fleet=fleet, aircraft=aircraft, date_from=date_from, date_to=date_to, bom=bom, part_group=part_group)
     stats["empty_slots_count"] = len(mmc_alerts)
     

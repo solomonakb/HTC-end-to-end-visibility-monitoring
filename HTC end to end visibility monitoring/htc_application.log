@@ -498,3 +498,265 @@
 2026-07-29 09:46:22,635 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
 2026-07-29 09:46:22,637 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
 2026-07-29 09:46:22,643 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:08:30,027 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 10:08:30,035 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 10:08:30,035 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 10:08:30,035 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:08:30,035 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 10:08:30,035 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 10:08:30,035 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 10:08:30,035 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:08:30,038 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 10:08:30,038 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 10:08:30,041 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 10:08:30,042 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:08:30,044 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 10:10:45,389 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 10:10:45,393 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 10:10:45,393 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 10:10:45,393 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:10:45,393 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 10:10:45,393 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 10:10:45,393 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 10:10:45,394 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:10:45,396 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 10:10:45,398 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 10:10:45,399 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 10:10:45,403 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:10:45,405 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 10:13:05,070 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 10:13:05,077 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 10:13:05,086 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:13:14,256 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 10:13:14,261 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 10:13:14,261 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 10:13:14,261 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:13:14,261 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 10:13:14,261 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 10:13:14,261 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 10:13:14,261 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 10:13:14,262 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:13:14,262 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 10:13:14,265 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:13:14,268 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 10:13:14,268 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 10:13:37,718 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 10:13:37,721 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 10:13:37,721 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 10:13:37,721 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:13:37,722 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 10:13:37,722 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 10:13:37,722 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 10:13:37,722 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:13:37,724 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 10:13:37,725 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 10:13:37,725 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 10:13:37,730 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:13:37,732 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 10:30:02,079 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 10:30:02,080 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 10:30:02,084 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:30:06,806 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 10:30:06,813 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 10:30:06,813 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 10:30:06,813 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:30:06,813 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 10:30:06,813 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 10:30:06,814 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 10:30:06,814 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 10:30:06,814 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 10:30:06,814 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 10:30:06,818 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 10:30:06,820 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 10:30:06,821 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 12:13:37,907 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 12:13:37,912 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 12:13:37,913 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 12:13:37,918 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 12:13:37,920 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 12:18:01,442 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 12:18:01,451 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 12:18:01,451 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 12:18:01,451 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 12:18:01,451 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 12:18:01,451 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 12:18:01,451 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 12:18:01,451 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 12:18:01,454 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 12:18:01,460 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 12:18:01,461 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 12:18:01,464 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 12:18:01,466 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 12:21:05,604 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 12:21:05,610 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 12:21:05,610 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 12:21:05,611 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 12:21:05,611 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 12:21:05,611 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 12:21:05,611 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 12:21:05,611 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 12:21:05,625 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 12:21:05,650 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 12:21:05,658 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 12:21:05,663 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 12:21:05,666 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 12:21:20,169 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-29 12:21:20,176 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 12:21:20,176 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-29 12:21:20,176 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 12:21:20,176 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-29 12:21:20,176 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-29 12:21:20,176 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-29 12:21:20,176 - INFO - waitress_server.run_server - =================================================================
+2026-07-29 12:21:20,181 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-29 12:21:20,182 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 12:21:20,183 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 12:21:20,188 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 12:21:20,190 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 13:00:29,710 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 13:00:29,715 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 13:00:29,720 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 13:06:44,736 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 13:06:44,736 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 13:06:44,741 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 14:21:20,417 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 14:21:20,442 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 14:21:20,442 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 14:21:20,457 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 14:21:20,457 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 15:00:13,604 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 15:00:13,604 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 15:00:13,604 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 16:21:20,656 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 16:21:20,678 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 16:21:20,681 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 16:21:20,686 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 16:21:20,692 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 16:52:25,202 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 16:52:25,202 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 16:52:25,217 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 18:21:20,871 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 18:21:20,904 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 18:21:21,265 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 18:21:21,275 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 18:21:21,285 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 20:21:21,452 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 20:21:21,489 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 20:21:21,489 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 20:21:21,498 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 20:21:21,508 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-29 22:21:21,732 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-29 22:21:21,760 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-29 22:21:21,760 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-29 22:21:21,770 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-29 22:21:21,780 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 00:21:21,936 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 00:21:21,974 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 00:21:21,974 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 00:21:21,984 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 00:21:21,995 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 02:21:22,119 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 02:21:22,157 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 02:21:22,157 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 02:21:22,167 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 02:21:22,167 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 04:21:22,298 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 04:21:22,315 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 04:21:22,321 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 04:21:22,326 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 04:21:22,329 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 06:21:22,454 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 06:21:22,472 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 06:21:22,485 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 06:21:22,490 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 06:21:22,501 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 08:01:05,251 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 08:01:05,251 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 08:01:05,251 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 08:05:46,456 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 08:05:46,458 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 08:05:46,463 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 08:05:47,506 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 08:05:47,506 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 08:05:47,510 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 08:21:22,632 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 08:21:22,637 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 08:21:22,637 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 08:21:22,647 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 08:21:22,657 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 09:15:55,046 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 09:15:55,052 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 09:15:55,058 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 09:21:14,940 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-30 09:21:14,945 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 09:21:14,945 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-30 09:21:14,946 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:21:14,946 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-30 09:21:14,946 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-30 09:21:14,946 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-30 09:21:14,946 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:21:14,949 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-30 09:21:14,971 - WARNING - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is NOT a directory or not accessible.
+2026-07-30 09:21:14,971 - INFO - waitress_server.auto_fetch_reports - No reports found in \\svhqftp03\HCT during auto-fetch.
+2026-07-30 09:29:38,152 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-30 09:29:38,156 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 09:29:38,156 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-30 09:29:38,156 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:29:38,156 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-30 09:29:38,156 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-30 09:29:38,156 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-30 09:29:38,156 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:29:38,161 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-30 09:29:38,172 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 09:29:38,175 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 09:29:38,180 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 09:29:38,182 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 09:36:55,235 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-30 09:36:55,239 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 09:36:55,239 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-30 09:36:55,239 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:36:55,239 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-30 09:36:55,240 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-30 09:36:55,240 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-30 09:36:55,240 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:36:55,243 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-30 09:36:55,286 - WARNING - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is NOT a directory or not accessible.
+2026-07-30 09:36:55,286 - INFO - waitress_server.auto_fetch_reports - No reports found in \\svhqftp03\HCT during auto-fetch.
+2026-07-30 09:38:18,923 - WARNING - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is NOT a directory or not accessible.
+2026-07-30 09:39:25,745 - INFO - waitress_server.run_server - ✅ Database tables checked / created.
+2026-07-30 09:39:25,749 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 09:39:25,749 - INFO - waitress_server.run_server - ✅ Scheduler started: checking for reports every 2 hours.
+2026-07-30 09:39:25,750 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:39:25,750 - INFO - waitress_server.run_server -   HTC End-to-End Visibility Monitoring Dashboard
+2026-07-30 09:39:25,750 - INFO - waitress_server.run_server -   Ethiopian Airlines | MPTC Engineering
+2026-07-30 09:39:25,750 - INFO - waitress_server.run_server - 🚀 Portal starting on http://0.0.0.0:5000
+2026-07-30 09:39:25,750 - INFO - waitress_server.run_server - =================================================================
+2026-07-30 09:39:25,755 - INFO - wasyncore.log_info - Serving on http://0.0.0.0:5000
+2026-07-30 09:39:25,757 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 09:39:25,759 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 09:39:25,763 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 09:39:25,765 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 09:56:44,026 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 09:56:44,031 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 09:56:44,036 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 09:56:53,602 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 09:56:53,604 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 09:56:53,608 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 10:56:20,924 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 10:56:20,928 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 10:56:20,931 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 10:56:25,792 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 10:56:25,793 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 10:56:25,796 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 11:39:25,943 - INFO - waitress_server.auto_fetch_reports - Starting auto-fetch of reports...
+2026-07-30 11:39:25,967 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 11:39:25,971 - INFO - database.scan_share_directory - scan_share_directory: Found 7 items.
+2026-07-30 11:39:25,975 - INFO - database.scan_share_directory - scan_share_directory: Returning 7 valid excel files.
+2026-07-30 11:39:25,979 - INFO - waitress_server.auto_fetch_reports - All found files are already loaded.
+2026-07-30 11:52:55,300 - INFO - database.scan_share_directory - scan_share_directory: '\\svhqftp03\HCT' is a valid directory. Scanning...
+2026-07-30 11:52:55,345 - INFO - database.scan_share_directory - scan_share_directory: Found 8 items.
+2026-07-30 11:52:55,350 - INFO - database.scan_share_directory - scan_share_directory: Returning 8 valid excel files.
+2026-07-30 11:52:55,352 - INFO - waitress_server.fetch_reports - Loading new report: Tracked_Part_Installation_Removal-202607301141.xls from \\svhqftp03\HCT\Tracked_Part_Installation_Removal-202607301141.xls
+2026-07-30 11:52:55,352 - INFO - database.load_excel - Loading data from \\svhqftp03\HCT\Tracked_Part_Installation_Removal-202607301141.xls into C:\Users\solomonal\OneDrive - Ethiopian Airlines\Others\11 KPI folder\2. Projects\10. Hard time missing mandatory tracker\HTC end to end visibility monitoring\htc_monitor.db
+2026-07-30 11:52:55,494 - INFO - database.load_excel - Using sheet: Tracked_Part_Installation_Remov (xlrd)
+2026-07-30 11:52:55,507 - INFO - waitress_server.fetch_reports - Loaded 2 records from Tracked_Part_Installation_Removal-202607301141.xls
