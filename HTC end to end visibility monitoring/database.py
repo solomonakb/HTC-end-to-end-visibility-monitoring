@@ -72,7 +72,32 @@ def init_db(db_path):
         source TEXT DEFAULT 'manual'
     )
     ''')
-    
+
+    # ── Email subscriptions (HTC Visibility Monitoring digest emails) ────────
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS email_subscriptions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        fleet_type TEXT NOT NULL,
+        alert_type TEXT NOT NULL,           -- comma-separated list, e.g. 'ALERT_B,ALERT_C'
+        frequency TEXT NOT NULL,            -- 'every_3_days' or 'weekly'
+        day_of_week TEXT,                   -- 'mon'..'sun', required if frequency='weekly'
+        run_time TEXT NOT NULL,             -- 'HH:MM' 24h, local server time
+        email TEXT NOT NULL,
+        active INTEGER DEFAULT 1,
+        created_at TEXT,
+        updated_at TEXT,
+        last_sent_at TEXT
+    )
+    ''')
+
+    # ── Generic key/value app config (OWA password, admin password, etc.) ────
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS app_config (
+        key TEXT PRIMARY KEY,
+        value TEXT
+    )
+    ''')
+
     conn.commit()
     conn.close()
 
@@ -391,6 +416,17 @@ def get_events(db_path, fleet=None, aircraft=None, event_type=None, date_from=No
         "page": page,
         "per_page": per_page
     }
+
+def get_total_event_count(db_path):
+    """Cheap existence/count check — used at startup instead of get_dashboard_stats,
+    which builds full result sets across three queries just to check for emptiness."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM htc_events")
+    count = cursor.fetchone()[0]
+    conn.close()
+    return count
+
 
 def get_dashboard_stats(db_path, fleet=None, aircraft=None, date_from=None, date_to=None, bom=None, part_group=None):
     conn = sqlite3.connect(db_path)
@@ -789,3 +825,248 @@ def get_part_groups(db_path):
     groups = [row[0] for row in cursor.fetchall()]
     conn.close()
     return groups
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Email subscriptions (HTC Visibility Monitoring digest emails)
+# ─────────────────────────────────────────────────────────────────────────────
+
+_VALID_ALERT_TYPES = {"ALERT_B", "ALERT_C"}
+_VALID_FREQUENCIES = {"every_3_days", "weekly"}
+_VALID_DAYS = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"}
+
+
+def get_subscriptions(db_path, active_only=False):
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = _dict_factory
+    cursor = conn.cursor()
+    query = "SELECT * FROM email_subscriptions"
+    if active_only:
+        query += " WHERE active = 1"
+    query += " ORDER BY id DESC"
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    conn.close()
+    return [_expand_alert_types(r) for r in rows]
+
+
+def get_subscription(db_path, sub_id):
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = _dict_factory
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM email_subscriptions WHERE id = ?", (sub_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return _expand_alert_types(row) if row else row
+
+
+def _serialize_alert_types(alert_type_input):
+    """Accepts either a list of alert types or a single string/comma-separated
+    string, validates each against _VALID_ALERT_TYPES, dedupes while
+    preserving order, and returns a comma-separated string for storage."""
+    if alert_type_input is None:
+        raw_list = []
+    elif isinstance(alert_type_input, (list, tuple, set)):
+        raw_list = list(alert_type_input)
+    else:
+        raw_list = str(alert_type_input).split(",")
+
+    seen = set()
+    cleaned = []
+    for item in raw_list:
+        val = str(item).strip().upper()
+        if not val:
+            continue
+        if val not in _VALID_ALERT_TYPES:
+            raise ValueError(f"alert_type must be one or more of: {', '.join(sorted(_VALID_ALERT_TYPES))}. Got '{val}'.")
+        if val not in seen:
+            seen.add(val)
+            cleaned.append(val)
+
+    if not cleaned:
+        raise ValueError(f"At least one alert_type is required (one or more of: {', '.join(sorted(_VALID_ALERT_TYPES))}).")
+
+    return ",".join(cleaned)
+
+
+def _expand_alert_types(row):
+    """Adds an 'alert_types' list field (parsed from the stored comma-separated
+    'alert_type' string) onto a subscription row dict for easier frontend use,
+    while keeping 'alert_type' as the raw stored string for backward compat."""
+    if row and row.get("alert_type"):
+        row["alert_types"] = [a for a in row["alert_type"].split(",") if a]
+    elif row is not None:
+        row["alert_types"] = []
+    return row
+
+
+def create_subscription(db_path, data):
+    """Create a new email subscription.
+
+    Required keys: fleet_type, alert_type (list of one or more of
+    'ALERT_B'/'ALERT_C', or a comma-separated string — also accepts the key
+    'alert_types' as an alias), frequency ('every_3_days'|'weekly'), run_time
+    ('HH:MM'), email. day_of_week required when frequency == 'weekly'.
+
+    Returns the created row dict, or raises ValueError on invalid input.
+    """
+    fleet_type = (data.get("fleet_type") or "").strip()
+    alert_type_input = data.get("alert_type", data.get("alert_types"))
+    frequency = (data.get("frequency") or "").strip().lower()
+    day_of_week = (data.get("day_of_week") or "").strip().lower() or None
+    run_time = (data.get("run_time") or "").strip()
+    email = (data.get("email") or "").strip().lower()
+
+    if not fleet_type:
+        raise ValueError("fleet_type is required.")
+    alert_type = _serialize_alert_types(alert_type_input)
+    if frequency not in _VALID_FREQUENCIES:
+        raise ValueError("frequency must be 'every_3_days' or 'weekly'.")
+    if frequency == "weekly" and day_of_week not in _VALID_DAYS:
+        raise ValueError("day_of_week is required and must be a 3-letter day (mon..sun) for weekly frequency.")
+    if not re.match(r'^\d{2}:\d{2}$', run_time):
+        raise ValueError("run_time must be in 'HH:MM' 24-hour format.")
+    if not email or "@" not in email:
+        raise ValueError("A valid email address is required.")
+
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = _dict_factory
+    cursor = conn.cursor()
+    now = datetime.utcnow().isoformat()
+    cursor.execute('''
+        INSERT INTO email_subscriptions (
+            fleet_type, alert_type, frequency, day_of_week, run_time,
+            email, active, created_at, updated_at, last_sent_at
+        ) VALUES (?, ?, ?, ?, ?, ?, 1, ?, ?, NULL)
+    ''', (fleet_type, alert_type, frequency, day_of_week, run_time, email, now, now))
+    conn.commit()
+    sub_id = cursor.lastrowid
+    cursor.execute("SELECT * FROM email_subscriptions WHERE id = ?", (sub_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return _expand_alert_types(row)
+
+
+def update_subscription(db_path, sub_id, data):
+    """Update an existing subscription. Any of the create_subscription fields
+    may be supplied; only supplied fields are validated and updated."""
+    allowed_fields = {
+        "fleet_type", "alert_type", "frequency", "day_of_week",
+        "run_time", "email", "active",
+    }
+    set_clauses = []
+    params = []
+
+    if "fleet_type" in data:
+        val = (data.get("fleet_type") or "").strip()
+        if not val:
+            raise ValueError("fleet_type cannot be empty.")
+        set_clauses.append("fleet_type = ?")
+        params.append(val)
+
+    if "alert_type" in data or "alert_types" in data:
+        val = _serialize_alert_types(data.get("alert_type", data.get("alert_types")))
+        set_clauses.append("alert_type = ?")
+        params.append(val)
+
+    if "frequency" in data:
+        val = (data.get("frequency") or "").strip().lower()
+        if val not in _VALID_FREQUENCIES:
+            raise ValueError("frequency must be 'every_3_days' or 'weekly'.")
+        set_clauses.append("frequency = ?")
+        params.append(val)
+
+    if "day_of_week" in data:
+        val = (data.get("day_of_week") or "").strip().lower() or None
+        if val is not None and val not in _VALID_DAYS:
+            raise ValueError("day_of_week must be a 3-letter day (mon..sun).")
+        set_clauses.append("day_of_week = ?")
+        params.append(val)
+
+    if "run_time" in data:
+        val = (data.get("run_time") or "").strip()
+        if not re.match(r'^\d{2}:\d{2}$', val):
+            raise ValueError("run_time must be in 'HH:MM' 24-hour format.")
+        set_clauses.append("run_time = ?")
+        params.append(val)
+
+    if "email" in data:
+        val = (data.get("email") or "").strip().lower()
+        if not val or "@" not in val:
+            raise ValueError("A valid email address is required.")
+        set_clauses.append("email = ?")
+        params.append(val)
+
+    if "active" in data:
+        set_clauses.append("active = ?")
+        params.append(1 if data.get("active") else 0)
+
+    if not set_clauses:
+        # Nothing to update — just return current row
+        return get_subscription(db_path, sub_id)
+
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = _dict_factory
+    cursor = conn.cursor()
+
+    now = datetime.utcnow().isoformat()
+    set_clauses.append("updated_at = ?")
+    params.append(now)
+
+    query = f"UPDATE email_subscriptions SET {', '.join(set_clauses)} WHERE id = ?"
+    params.append(sub_id)
+    cursor.execute(query, params)
+    conn.commit()
+
+    cursor.execute("SELECT * FROM email_subscriptions WHERE id = ?", (sub_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return _expand_alert_types(row)
+
+
+def delete_subscription(db_path, sub_id):
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM email_subscriptions WHERE id = ?", (sub_id,))
+    conn.commit()
+    deleted = cursor.rowcount > 0
+    conn.close()
+    return deleted
+
+
+def mark_subscription_sent(db_path, sub_id, when=None):
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    ts = (when or datetime.utcnow()).isoformat()
+    cursor.execute(
+        "UPDATE email_subscriptions SET last_sent_at = ? WHERE id = ?",
+        (ts, sub_id)
+    )
+    conn.commit()
+    conn.close()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Generic app config (key/value) — used for OWA password, admin password, etc.
+# ─────────────────────────────────────────────────────────────────────────────
+
+def get_config_value(db_path, key, default=None):
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT value FROM app_config WHERE key = ?", (key,))
+    row = cursor.fetchone()
+    conn.close()
+    if row and row[0] is not None:
+        return row[0]
+    return default
+
+
+def set_config_value(db_path, key, value):
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO app_config (key, value) VALUES (?, ?)
+        ON CONFLICT(key) DO UPDATE SET value = excluded.value
+    ''', (key, value))
+    conn.commit()
+    conn.close()

@@ -11,14 +11,19 @@
 </head>
 <body>
   <header>
-    <div class="logo">✈️ Ethiopian Airlines</div>
+    <div class="logo"><img src="/static/images/ethiopian_airlines_logo.jpg" alt="Ethiopian Airlines" class="logo-img"></div>
     <div class="header-titles">
       <h1>HTC End-to-End Visibility Monitoring</h1>
       <h2>Aircraft Engineering and Planning (AEP)</h2>
     </div>
-    <button id="btn-theme-toggle" class="btn-theme-toggle" title="Toggle theme" style="margin-left: auto;">
-      <span id="theme-icon">🌙</span>
-    </button>
+    <div class="header-icon-group">
+      <button id="btn-admin-settings" class="btn-theme-toggle" title="Admin Settings — OWA/Exchange Config">
+        <span>⚙️</span>
+      </button>
+      <button id="btn-theme-toggle" class="btn-theme-toggle" title="Toggle theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </div>
   </header>
 
   <div class="dashboard-stats" id="dashboard-stats">
@@ -59,7 +64,8 @@
     <button class="tab-btn" data-target="tab-alert-a">Alert A (Install/Remove)</button>
     <button class="tab-btn" data-target="tab-alert-b">Alert B (XXX S/N)</button>
     <button class="tab-btn" data-target="tab-alert-c">Alert C (MMC)</button>
-    <button class="tab-btn" data-target="tab-resolutions">Resolution Tracker</button> 
+    <button class="tab-btn" data-target="tab-resolutions">Resolution Tracker</button>
+    <button class="tab-btn" data-target="tab-subscriptions">Email Subscriptions</button>
   </nav>
 
   <div class="filters-bar" id="filters-bar">
@@ -285,10 +291,174 @@
         </div>
       </div>
     </div>
- 
 
-    
+    <div class="tab-content hidden" id="tab-subscriptions">
+      <div class="tab-header-flex">
+        <div>
+          <h3>Email Subscriptions</h3>
+          <p>Subscribe to recurring Alert B / Alert C digest emails, sent from
+             <strong>htcvisibilitymonitoring@ethiopianairlines.com</strong>.</p>
+        </div>
+        <button id="btn-new-subscription" class="btn btn-primary">+ New Subscription</button>
+      </div>
+      <div class="table-container">
+        <table id="subscriptions-table">
+          <thead>
+            <tr>
+              <th>Fleet</th>
+              <th>Alert Type</th>
+              <th>Frequency</th>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Email</th>
+              <th>Active</th>
+              <th>Last Sent</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="subscriptions-tbody">
+            <!-- Data loaded via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Subscription Form Modal -->
+      <div class="modal hidden" id="subscription-modal">
+        <div class="modal-content">
+          <h3 id="subscription-modal-title">New Email Subscription</h3>
+          <form id="subscription-form">
+            <input type="hidden" id="sub-id">
+            <div class="form-grid">
+              <label class="full-width">Fleet Type
+                <select id="sub-fleet-type" required>
+                  <option value="">Select fleet…</option>
+                </select>
+              </label>
+              <label class="full-width">Alert Type (select one or more)
+                <div id="sub-alert-type-group" style="display:flex; gap:16px; margin-top:6px; font-weight:400;">
+                  <label style="display:flex; align-items:center; gap:6px; font-weight:400;">
+                    <input type="checkbox" class="sub-alert-type-checkbox" value="ALERT_B">
+                    Alert B — HTC XXX Serial Number Monitoring
+                  </label>
+                  <label style="display:flex; align-items:center; gap:6px; font-weight:400;">
+                    <input type="checkbox" class="sub-alert-type-checkbox" value="ALERT_C">
+                    Alert C — Missing Mandatory Component (MMC)
+                  </label>
+                </div>
+              </label>
+              <label>Frequency
+                <select id="sub-frequency" required>
+                  <option value="every_3_days">Every 3 Days</option>
+                  <option value="weekly">Weekly</option>
+                </select>
+              </label>
+              <label id="sub-day-wrapper">Day of Week
+                <select id="sub-day-of-week">
+                  <option value="mon">Monday</option>
+                  <option value="tue">Tuesday</option>
+                  <option value="wed">Wednesday</option>
+                  <option value="thu">Thursday</option>
+                  <option value="fri">Friday</option>
+                  <option value="sat">Saturday</option>
+                  <option value="sun">Sunday</option>
+                </select>
+              </label>
+              <label>Run Time<input type="time" id="sub-run-time" required></label>
+              <label class="full-width">Email Address<input type="email" id="sub-email" required placeholder="you@ethiopianairlines.com"></label>
+            </div>
+            <div class="modal-actions">
+              <button type="submit" class="btn btn-primary">Save Subscription</button>
+              <button type="button" class="btn btn-secondary" id="btn-cancel-subscription">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
   </main>
+
+  <!-- Admin Settings Modal (⚙ gear icon) -->
+  <div class="modal hidden" id="admin-login-modal">
+    <div class="modal-content">
+      <h3>Admin Login</h3>
+      <form id="admin-login-form">
+        <div class="form-grid">
+          <label class="full-width">Admin Password<input type="password" id="admin-password-input" required></label>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-secondary" id="btn-cancel-admin-login">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="admin-settings-modal">
+    <div class="modal-content">
+      <h3>📧 Email Service Config — HTC OWA / Exchange Configuration</h3>
+      <div class="form-grid">
+        <label class="full-width">Sender Mailbox
+          <input type="text" id="admin-owa-sender" value="htcvisibilitymonitoring@ethiopianairlines.com" disabled>
+        </label>
+        <label class="full-width">Exchange Server
+          <input type="text" id="admin-owa-server" value="etlbha.ethiopianairlines.com" disabled>
+        </label>
+        <label class="full-width">Status
+          <input type="text" id="admin-owa-status" disabled>
+        </label>
+      </div>
+
+      <div class="config-warning-banner">
+        <span class="config-warning-icon">⚠️</span>
+        <div><strong>Warning:</strong> Updating this password affects all automated notifications.</div>
+      </div>
+
+      <div class="config-reset-callout">
+        <div class="config-reset-title">🔑 Need to reset your email password first?</div>
+        <div class="config-reset-body">
+          Reset your Ethiopian Airlines account password via the RDWeb portal,
+          then come back here to save the updated password.
+        </div>
+        <a href="https://password.ethiopianairlines.com/RDWeb/Pages/en-US/password.aspx"
+           target="_blank" rel="noopener" class="config-reset-link">
+          🔗 https://password.ethiopianairlines.com/RDWeb/Pages/en-US/password.aspx
+        </a>
+      </div>
+
+      <div class="form-grid">
+        <label class="full-width">New OWA Password
+          <div class="password-input-wrapper">
+            <span class="password-input-icon">🔑</span>
+            <input type="password" id="admin-owa-password" placeholder="Enter new password">
+            <button type="button" class="password-toggle-btn" data-target="admin-owa-password" aria-label="Show password">👁️</button>
+          </div>
+        </label>
+        <label class="full-width">Confirm New Password
+          <div class="password-input-wrapper">
+            <span class="password-input-icon">🔑</span>
+            <input type="password" id="admin-owa-password-confirm" placeholder="Repeat new password">
+            <button type="button" class="password-toggle-btn" data-target="admin-owa-password-confirm" aria-label="Show password">👁️</button>
+          </div>
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="btn-close-admin-settings">Cancel</button>
+        <button type="button" class="btn btn-primary" id="btn-save-owa-config">💾 Update Password</button>
+        <button type="button" class="btn btn-secondary" id="btn-test-owa-config">Test Connection</button>
+      </div>
+      <hr style="margin:16px 0;opacity:0.2;">
+      <div class="form-grid">
+        <label class="full-width">Change Admin Password
+          <input type="password" id="admin-new-password" placeholder="New admin password">
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="btn-change-admin-password">Update Admin Password</button>
+        <button type="button" class="btn btn-secondary" id="btn-admin-logout">Log Out</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>Ethiopian Airlines Group | Aircraft Engineering & Planning | CONFIDENTIAL</p>
@@ -303,5 +473,366 @@
   </div>
 
   <script src="/static/app.js"></script>
+
+  <!--
+    ═══════════════════════════════════════════════════════════════════════
+    NEW FEATURE SCRIPT — Email Subscriptions + Admin OWA Settings
+    ═══════════════════════════════════════════════════════════════════════
+    This block is self-contained so the page works standalone. If your
+    project keeps all JS in /static/app.js, move this block's contents
+    there instead (it only depends on functions/ids defined in this file
+    and does not rely on anything from your existing app.js).
+  -->
+  <script>
+  (function () {
+    'use strict';
+
+    // ── Toast helper (falls back to alert() if app.js doesn't expose one) ──
+    function showToast(message, isError) {
+      var container = document.getElementById('toast-container');
+      if (!container) { alert(message); return; }
+      var toast = document.createElement('div');
+      toast.className = 'toast' + (isError ? ' toast-error' : ' toast-success');
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(function () { toast.remove(); }, 4000);
+    }
+
+    // ── Load subscription data when the Email Subscriptions tab is opened.
+    //    Tab switching itself is already handled by app.js's setupEventListeners();
+    //    this just listens for clicks on our new tab button specifically. ──
+    var subscriptionsTabBtn = document.querySelector('.tab-btn[data-target="tab-subscriptions"]');
+    if (subscriptionsTabBtn) {
+      subscriptionsTabBtn.addEventListener('click', function () {
+        loadSubscriptions();
+        loadFleetOptionsForSubscriptionForm();
+      });
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // EMAIL SUBSCRIPTIONS
+    // ═══════════════════════════════════════════════════════════════════
+
+    var subModal = document.getElementById('subscription-modal');
+    var subForm = document.getElementById('subscription-form');
+    var subDayWrapper = document.getElementById('sub-day-wrapper');
+    var subFrequencySelect = document.getElementById('sub-frequency');
+
+    function toggleDayOfWeekVisibility() {
+      subDayWrapper.style.display = (subFrequencySelect.value === 'weekly') ? '' : 'none';
+    }
+    subFrequencySelect.addEventListener('change', toggleDayOfWeekVisibility);
+
+    function openSubscriptionModal(sub) {
+      document.getElementById('subscription-modal-title').textContent =
+        sub ? 'Edit Email Subscription' : 'New Email Subscription';
+      document.getElementById('sub-id').value = sub ? sub.id : '';
+      document.getElementById('sub-fleet-type').value = sub ? sub.fleet_type : '';
+
+      var selectedTypes = sub ? (sub.alert_types || (sub.alert_type || '').split(',')) : [];
+      document.querySelectorAll('.sub-alert-type-checkbox').forEach(function (cb) {
+        cb.checked = selectedTypes.indexOf(cb.value) !== -1;
+      });
+
+      document.getElementById('sub-frequency').value = sub ? sub.frequency : 'every_3_days';
+      document.getElementById('sub-day-of-week').value = sub ? (sub.day_of_week || 'mon') : 'mon';
+      document.getElementById('sub-run-time').value = sub ? sub.run_time : '08:00';
+      document.getElementById('sub-email').value = sub ? sub.email : '';
+      toggleDayOfWeekVisibility();
+      subModal.classList.remove('hidden');
+    }
+
+    function closeSubscriptionModal() {
+      subModal.classList.add('hidden');
+      subForm.reset();
+    }
+
+    document.getElementById('btn-new-subscription').addEventListener('click', function () {
+      openSubscriptionModal(null);
+    });
+    document.getElementById('btn-cancel-subscription').addEventListener('click', closeSubscriptionModal);
+
+    function loadFleetOptionsForSubscriptionForm() {
+      fetch('/api/fleet-types')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var select = document.getElementById('sub-fleet-type');
+          var current = select.value;
+          var fleets = data.fleets || [];
+          select.innerHTML = '<option value="">Select fleet…</option>' +
+            fleets.map(function (f) {
+              return '<option value="' + f + '">' + f + '</option>';
+            }).join('');
+          if (current) select.value = current;
+        })
+        .catch(function (e) { console.error('Failed to load fleet types', e); });
+    }
+
+    function loadSubscriptions() {
+      fetch('/api/subscriptions')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var tbody = document.getElementById('subscriptions-tbody');
+          var subs = data.subscriptions || [];
+          if (subs.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;padding:20px;opacity:0.6;">No subscriptions yet.</td></tr>';
+            return;
+          }
+          var alertLabels = {
+            ALERT_B: 'Alert B (XXX S/N)',
+            ALERT_C: 'Alert C (MMC)'
+          };
+          var frequencyLabels = { every_3_days: 'Every 3 Days', weekly: 'Weekly' };
+          tbody.innerHTML = subs.map(function (s) {
+            var dayLabel = s.frequency === 'weekly' ? (s.day_of_week || '').toUpperCase() : '—';
+            var lastSent = s.last_sent_at ? new Date(s.last_sent_at).toLocaleString() : 'Never';
+            var activeLabel = s.active ? '✅' : '⏸️';
+            var types = s.alert_types || (s.alert_type || '').split(',').filter(Boolean);
+            var alertTypeLabel = types.map(function (t) { return alertLabels[t] || t; }).join(', ');
+            return '<tr>' +
+              '<td>' + escapeHtml(s.fleet_type) + '</td>' +
+              '<td>' + alertTypeLabel + '</td>' +
+              '<td>' + (frequencyLabels[s.frequency] || s.frequency) + '</td>' +
+              '<td>' + dayLabel + '</td>' +
+              '<td>' + s.run_time + '</td>' +
+              '<td>' + escapeHtml(s.email) + '</td>' +
+              '<td style="text-align:center;">' + activeLabel + '</td>' +
+              '<td>' + lastSent + '</td>' +
+              '<td>' +
+                '<button class="btn btn-secondary btn-sm" onclick="window.__htcEditSubscription(' + s.id + ')">Edit</button> ' +
+                '<button class="btn btn-secondary btn-sm" onclick="window.__htcSendNowSubscription(' + s.id + ')">Send Now</button> ' +
+                '<button class="btn btn-secondary btn-sm" onclick="window.__htcDeleteSubscription(' + s.id + ')">Delete</button>' +
+              '</td>' +
+            '</tr>';
+          }).join('');
+        })
+        .catch(function (e) {
+          console.error('Failed to load subscriptions', e);
+          showToast('Failed to load subscriptions.', true);
+        });
+    }
+
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      var div = document.createElement('div');
+      div.textContent = String(str);
+      return div.innerHTML;
+    }
+
+    subForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var selectedAlertTypes = Array.prototype.slice
+        .call(document.querySelectorAll('.sub-alert-type-checkbox:checked'))
+        .map(function (cb) { return cb.value; });
+
+      if (selectedAlertTypes.length === 0) {
+        showToast('Select at least one alert type.', true);
+        return;
+      }
+
+      var id = document.getElementById('sub-id').value;
+      var payload = {
+        fleet_type: document.getElementById('sub-fleet-type').value,
+        alert_type: selectedAlertTypes,
+        frequency: document.getElementById('sub-frequency').value,
+        day_of_week: document.getElementById('sub-day-of-week').value,
+        run_time: document.getElementById('sub-run-time').value,
+        email: document.getElementById('sub-email').value
+      };
+      var url = id ? '/api/subscriptions/' + id : '/api/subscriptions';
+      var method = id ? 'PUT' : 'POST';
+
+      fetch(url, {
+        method: method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+        .then(function (result) {
+          if (result.ok && result.data.success) {
+            showToast(id ? 'Subscription updated.' : 'Subscription created.', false);
+            closeSubscriptionModal();
+            loadSubscriptions();
+          } else {
+            showToast(result.data.error || 'Failed to save subscription.', true);
+          }
+        })
+        .catch(function (e) {
+          console.error(e);
+          showToast('Network error saving subscription.', true);
+        });
+    });
+
+    window.__htcEditSubscription = function (id) {
+      fetch('/api/subscriptions')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var sub = (data.subscriptions || []).find(function (s) { return s.id === id; });
+          if (sub) openSubscriptionModal(sub);
+        });
+    };
+
+    window.__htcDeleteSubscription = function (id) {
+      if (!confirm('Delete this subscription? This cannot be undone.')) return;
+      fetch('/api/subscriptions/' + id, { method: 'DELETE' })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) {
+            showToast('Subscription deleted.', false);
+            loadSubscriptions();
+          } else {
+            showToast(data.error || 'Failed to delete subscription.', true);
+          }
+        });
+    };
+
+    window.__htcSendNowSubscription = function (id) {
+      showToast('Sending digest…', false);
+      fetch('/api/subscriptions/' + id + '/send-now', { method: 'POST' })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) {
+            showToast('Digest sent (' + data.rows_sent + ' rows).', false);
+            loadSubscriptions();
+          } else {
+            showToast(data.error || 'Failed to send digest.', true);
+          }
+        });
+    };
+
+    // ═══════════════════════════════════════════════════════════════════
+    // ADMIN SETTINGS (⚙ gear icon)
+    // ═══════════════════════════════════════════════════════════════════
+
+    var adminLoginModal = document.getElementById('admin-login-modal');
+    var adminSettingsModal = document.getElementById('admin-settings-modal');
+
+    document.getElementById('btn-admin-settings').addEventListener('click', function () {
+      fetch('/api/admin/session')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.is_admin) {
+            openAdminSettingsModal();
+          } else {
+            adminLoginModal.classList.remove('hidden');
+          }
+        });
+    });
+
+    document.getElementById('btn-cancel-admin-login').addEventListener('click', function () {
+      adminLoginModal.classList.add('hidden');
+    });
+
+    document.getElementById('admin-login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var password = document.getElementById('admin-password-input').value;
+      fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: password })
+      })
+        .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+        .then(function (result) {
+          if (result.ok && result.data.success) {
+            document.getElementById('admin-password-input').value = '';
+            adminLoginModal.classList.add('hidden');
+            openAdminSettingsModal();
+          } else {
+            showToast('Incorrect admin password.', true);
+          }
+        });
+    });
+
+    function openAdminSettingsModal() {
+      fetch('/api/admin/owa-config')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          document.getElementById('admin-owa-status').value =
+            data.password_configured ? '✅ Password configured' : '⚠️ Using default/legacy password — set one now';
+          document.getElementById('admin-owa-password').value = '';
+          document.getElementById('admin-owa-password-confirm').value = '';
+          adminSettingsModal.classList.remove('hidden');
+        })
+        .catch(function () {
+          showToast('Failed to load OWA config.', true);
+        });
+    }
+
+    document.getElementById('btn-close-admin-settings').addEventListener('click', function () {
+      adminSettingsModal.classList.add('hidden');
+    });
+
+    document.getElementById('btn-save-owa-config').addEventListener('click', function () {
+      var pw = document.getElementById('admin-owa-password').value;
+      var pwConfirm = document.getElementById('admin-owa-password-confirm').value;
+      if (!pw) { showToast('Enter a password to save.', true); return; }
+      if (pw !== pwConfirm) { showToast('Passwords do not match.', true); return; }
+      fetch('/api/admin/owa-config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ owa_password: pw })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) {
+            showToast('OWA password updated.', false);
+            document.getElementById('admin-owa-password').value = '';
+            document.getElementById('admin-owa-password-confirm').value = '';
+            openAdminSettingsModal();
+          } else {
+            showToast(data.error || 'Failed to update password.', true);
+          }
+        });
+    });
+
+    document.querySelectorAll('.password-toggle-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var input = document.getElementById(btn.getAttribute('data-target'));
+        var showing = input.type === 'text';
+        input.type = showing ? 'password' : 'text';
+        btn.textContent = showing ? '👁️' : '🙈';
+        btn.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+      });
+    });
+
+    document.getElementById('btn-test-owa-config').addEventListener('click', function () {
+      showToast('Testing Exchange connection…', false);
+      fetch('/api/admin/owa-test', { method: 'POST' })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          showToast(data.message || data.error || 'Test complete.', !data.success);
+        });
+    });
+
+    document.getElementById('btn-change-admin-password').addEventListener('click', function () {
+      var pw = document.getElementById('admin-new-password').value;
+      if (!pw || pw.length < 4) { showToast('Password must be at least 4 characters.', true); return; }
+      fetch('/api/admin/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ new_password: pw })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) {
+            showToast('Admin password updated.', false);
+            document.getElementById('admin-new-password').value = '';
+          } else {
+            showToast(data.error || 'Failed to update admin password.', true);
+          }
+        });
+    });
+
+    document.getElementById('btn-admin-logout').addEventListener('click', function () {
+      fetch('/api/admin/logout', { method: 'POST' })
+        .then(function () {
+          adminSettingsModal.classList.add('hidden');
+          showToast('Logged out of admin settings.', false);
+        });
+    });
+
+  })();
+  </script>
 </body>
 </html>

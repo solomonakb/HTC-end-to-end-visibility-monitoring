@@ -1,14 +1,17 @@
 import os
 import csv
 import logging
+from functools import wraps
 from logging.handlers import RotatingFileHandler
 from io import StringIO
 from datetime import datetime, timedelta
 import threading
 import time
-from flask import Flask, request, jsonify, render_template, Response
+from flask import Flask, request, jsonify, render_template, Response, session
 from waitress import serve
 import database
+import htc_email
+from subscription_scheduler import start_subscription_scheduler
 
 # ─── Logging Setup ──────────────────────────────────────────────────────────
 LOG_FILE = 'htc_application.log'
@@ -30,11 +33,42 @@ logger = logging.getLogger(__name__)
 
 # ─── Application Init ────────────────────────────────────────────────────────
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'htc-monitoring-secret-key')
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+# Set HTTPS_ENABLED=true in the environment only when serving over HTTPS —
+# otherwise browsers silently drop Secure-flagged cookies on plain HTTP.
+app.config['SESSION_COOKIE_SECURE'] = os.environ.get('HTTPS_ENABLED', 'false').lower() == 'true'
+
+# Admin password for the ⚙ settings panel (OWA config etc.) — override via env var.
+ADMIN_PASSWORD_DEFAULT = os.environ.get('HTC_ADMIN_PASSWORD', 'admin')
+
 
 @app.after_request
 def remove_server_header(response):
     response.headers.pop('Server', None)
     return response
+
+
+def require_admin(f):
+    """Grant access when the admin session flag is set, OR when the request
+    body/query carries the correct admin password (stateless fallback for
+    when Secure cookies get dropped over plain HTTP)."""
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        if session.get('htc_admin'):
+            return f(*args, **kwargs)
+
+        payload = request.get_json(silent=True) or {}
+        supplied = payload.get('admin_password') or request.args.get('admin_password') or ''
+        current_password = database.get_config_value(DB_PATH, 'ADMIN_PASSWORD', ADMIN_PASSWORD_DEFAULT)
+        if supplied and supplied == current_password:
+            session['htc_admin'] = True
+            session.permanent = True
+            return f(*args, **kwargs)
+
+        return jsonify({"error": "Admin authentication required."}), 401
+    return wrapper
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, 'htc_monitor.db')
@@ -49,8 +83,8 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def check_initial_load():
     """Check if DB is empty and load default Excel if it exists."""
-    stats = database.get_dashboard_stats(DB_PATH)
-    if stats['total_events'] == 0 and os.path.exists(EXCEL_PATH):
+    total_events = database.get_total_event_count(DB_PATH)
+    if total_events == 0 and os.path.exists(EXCEL_PATH):
         logger.info(f"Database empty. Loading initial data from {EXCEL_PATH}...")
         success, count = database.load_excel(DB_PATH, EXCEL_PATH)
         if success:
@@ -461,6 +495,179 @@ def loaded_files():
         return jsonify({"error": str(e)}), 500
 
 
+# ─── Email Subscription Routes ────────────────────────────────────────────────
+
+@app.route('/api/subscriptions', methods=['GET'])
+def list_subscriptions():
+    try:
+        subs = database.get_subscriptions(DB_PATH)
+        return jsonify({"subscriptions": subs})
+    except Exception as e:
+        logger.error(f"List subscriptions error: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/subscriptions', methods=['POST'])
+def add_subscription():
+    data = request.json
+    if not data:
+        return jsonify({"error": "Invalid JSON", "success": False}), 400
+    try:
+        result = database.create_subscription(DB_PATH, data)
+        return jsonify({"success": True, "subscription": result}), 201
+    except ValueError as ve:
+        return jsonify({"error": str(ve), "success": False}), 400
+    except Exception as e:
+        logger.error(f"Create subscription error: {e}")
+        return jsonify({"error": str(e), "success": False}), 500
+
+
+@app.route('/api/subscriptions/<int:sub_id>', methods=['PUT'])
+def edit_subscription(sub_id):
+    data = request.json
+    if not data:
+        return jsonify({"error": "Invalid JSON", "success": False}), 400
+    try:
+        result = database.update_subscription(DB_PATH, sub_id, data)
+        if result:
+            return jsonify({"success": True, "subscription": result})
+        return jsonify({"error": "Subscription not found", "success": False}), 404
+    except ValueError as ve:
+        return jsonify({"error": str(ve), "success": False}), 400
+    except Exception as e:
+        logger.error(f"Update subscription error: {e}")
+        return jsonify({"error": str(e), "success": False}), 500
+
+
+@app.route('/api/subscriptions/<int:sub_id>', methods=['DELETE'])
+def remove_subscription(sub_id):
+    try:
+        deleted = database.delete_subscription(DB_PATH, sub_id)
+        if deleted:
+            return jsonify({"success": True})
+        return jsonify({"error": "Subscription not found", "success": False}), 404
+    except Exception as e:
+        logger.error(f"Delete subscription error: {e}")
+        return jsonify({"error": str(e), "success": False}), 500
+
+
+@app.route('/api/subscriptions/<int:sub_id>/send-now', methods=['POST'])
+def send_subscription_now(sub_id):
+    """Manually trigger a subscription's digest(s) immediately (e.g. for testing).
+    Sends one digest email per selected alert type."""
+    try:
+        sub = database.get_subscription(DB_PATH, sub_id)
+        if not sub:
+            return jsonify({"error": "Subscription not found", "success": False}), 404
+
+        alert_types = sub.get("alert_types") or [a for a in (sub.get("alert_type") or "").split(",") if a]
+        total_rows = 0
+        failures = []
+
+        for alert_type in alert_types:
+            if alert_type == "ALERT_B":
+                rows = database.get_alert_b_events(DB_PATH, fleet=sub.get("fleet_type"))
+            else:
+                rows = database.get_mmc_alerts(DB_PATH, fleet=sub.get("fleet_type"))
+
+            ok, msg = htc_email.send_subscription_digest(
+                DB_PATH, to_email=sub.get("email"), fleet_type=sub.get("fleet_type"),
+                alert_type=alert_type, rows=rows,
+            )
+            if ok:
+                total_rows += len(rows)
+            else:
+                failures.append(f"{alert_type}: {msg}")
+
+        database.mark_subscription_sent(DB_PATH, sub_id)
+
+        if failures:
+            return jsonify({
+                "success": False,
+                "error": "Some digests failed to send: " + "; ".join(failures),
+                "rows_sent": total_rows
+            }), 500
+
+        return jsonify({"success": True, "message": f"Digest(s) sent to {sub.get('email')}.", "rows_sent": total_rows})
+    except Exception as e:
+        logger.error(f"Send-now subscription error: {e}")
+        return jsonify({"error": str(e), "success": False}), 500
+
+
+# ─── Admin / OWA Settings Routes (⚙ gear icon panel) ──────────────────────────
+
+@app.route('/api/admin/login', methods=['POST'])
+def admin_login():
+    data = request.json or {}
+    supplied = data.get('password', '')
+    current_password = database.get_config_value(DB_PATH, 'ADMIN_PASSWORD', ADMIN_PASSWORD_DEFAULT)
+    if supplied and supplied == current_password:
+        session['htc_admin'] = True
+        session.permanent = True
+        return jsonify({"success": True})
+    return jsonify({"success": False, "error": "Incorrect password."}), 401
+
+
+@app.route('/api/admin/logout', methods=['POST'])
+def admin_logout():
+    session.pop('htc_admin', None)
+    return jsonify({"success": True})
+
+
+@app.route('/api/admin/session', methods=['GET'])
+def admin_session():
+    return jsonify({"is_admin": bool(session.get('htc_admin'))})
+
+
+@app.route('/api/admin/owa-config', methods=['GET'])
+@require_admin
+def get_owa_config():
+    """Return OWA config status (never returns the actual password)."""
+    pw_set = bool(database.get_config_value(DB_PATH, 'HTC_OWA_PASSWORD'))
+    return jsonify({
+        "sender": "htcvisibilitymonitoring@ethiopianairlines.com",
+        "server": "etlbha.ethiopianairlines.com",
+        "password_configured": pw_set,
+    })
+
+
+@app.route('/api/admin/owa-config', methods=['POST'])
+@require_admin
+def set_owa_config():
+    """Set/update the OWA password for htcvisibilitymonitoring@ethiopianairlines.com."""
+    data = request.json or {}
+    new_password = data.get('owa_password', '').strip()
+    if not new_password:
+        return jsonify({"success": False, "error": "owa_password is required."}), 400
+
+    database.set_config_value(DB_PATH, 'HTC_OWA_PASSWORD', new_password)
+    logger.info("HTC OWA password updated via admin panel.")
+    return jsonify({"success": True, "message": "OWA password updated."})
+
+
+@app.route('/api/admin/owa-test', methods=['POST'])
+@require_admin
+def test_owa_config():
+    """Attempt to authenticate against Exchange without sending an email."""
+    try:
+        ok, msg = htc_email.test_owa_connection(DB_PATH)
+        return jsonify({"success": ok, "message": msg})
+    except Exception as e:
+        logger.error(f"OWA test error: {e}")
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
+@app.route('/api/admin/change-password', methods=['POST'])
+@require_admin
+def change_admin_password():
+    data = request.json or {}
+    new_password = data.get('new_password', '').strip()
+    if not new_password or len(new_password) < 4:
+        return jsonify({"success": False, "error": "New password must be at least 4 characters."}), 400
+    database.set_config_value(DB_PATH, 'ADMIN_PASSWORD', new_password)
+    return jsonify({"success": True, "message": "Admin password updated."})
+
+
 # ─── Run ─────────────────────────────────────────────────────────────────────
 def run_server():
     host = os.environ.get('FLASK_HOST', '0.0.0.0')
@@ -471,9 +678,12 @@ def run_server():
     logger.info('✅ Database tables checked / created.')
 
     # ── Initial Load and Scheduler ───────────────────────────────────────────
-    check_initial_load()
+    threading.Thread(target=check_initial_load, daemon=True, name="initial-load").start()
     start_scheduler()
     logger.info('✅ Scheduler started: checking for reports every 2 hours.')
+
+    start_subscription_scheduler(DB_PATH)
+    logger.info('✅ Email subscription scheduler started: checking every 60s for due digests.')
 
     logger.info('=' * 65)
     logger.info('  HTC End-to-End Visibility Monitoring Dashboard')
