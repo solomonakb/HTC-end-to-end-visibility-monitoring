@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTC Monitoring | Ethiopian Airlines</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTC Monitoring | Ethiopian Airlines</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ url_for('static', filename='images/favicon-32.png') }}">
+    <link rel="apple-touch-icon"
+          href="{{ url_for('static', filename='images/favicon-192.png') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <header>
-    <div class="logo"><img src="/static/images/ethiopian_airlines_logo.jpg" alt="Ethiopian Airlines" class="logo-img"></div>
+    <div class="logo"><img src="/static/images/et-80years-logo.png" alt="Ethiopian Airlines 80 Years" class="logo-img"></div>
     <div class="header-titles">
       <h1>HTC End-to-End Visibility Monitoring</h1>
       <h2>Aircraft Engineering and Planning (AEP)</h2>
@@ -329,10 +342,16 @@
           <form id="subscription-form">
             <input type="hidden" id="sub-id">
             <div class="form-grid">
-              <label class="full-width">Fleet Type
-                <select id="sub-fleet-type" required>
-                  <option value="">Select fleet…</option>
-                </select>
+              <label class="full-width">Fleet Type (select one or more)
+                <div class="multiselect" id="sub-fleet-type-multiselect">
+                  <button type="button" class="multiselect-toggle" id="sub-fleet-type-toggle">
+                    <span id="sub-fleet-type-summary">Select fleet…</span>
+                    <span class="multiselect-chevron">&#9662;</span>
+                  </button>
+                  <div class="multiselect-panel hidden" id="sub-fleet-type-panel">
+                    <div class="multiselect-empty" id="sub-fleet-type-empty">No fleets found.</div>
+                  </div>
+                </div>
               </label>
               <label class="full-width">Alert Type (select one or more)
                 <div id="sub-alert-type-group" style="display:flex; gap:16px; margin-top:6px; font-weight:400;">
@@ -518,6 +537,39 @@
     var subDayWrapper = document.getElementById('sub-day-wrapper');
     var subFrequencySelect = document.getElementById('sub-frequency');
 
+    // ── Fleet Type multi-select dropdown ──────────────────────────────────
+    var fleetMultiselect = document.getElementById('sub-fleet-type-multiselect');
+    var fleetToggle = document.getElementById('sub-fleet-type-toggle');
+    var fleetPanel = document.getElementById('sub-fleet-type-panel');
+    var fleetSummary = document.getElementById('sub-fleet-type-summary');
+
+    fleetToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      fleetPanel.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function (e) {
+      if (!fleetMultiselect.contains(e.target)) {
+        fleetPanel.classList.add('hidden');
+      }
+    });
+
+    function getSelectedFleets() {
+      return Array.prototype.slice
+        .call(fleetPanel.querySelectorAll('.sub-fleet-type-checkbox:checked'))
+        .map(function (cb) { return cb.value; });
+    }
+
+    function updateFleetSummary() {
+      var selected = getSelectedFleets();
+      if (selected.length === 0) {
+        fleetSummary.textContent = 'Select fleet…';
+      } else if (selected.length <= 2) {
+        fleetSummary.textContent = selected.join(', ');
+      } else {
+        fleetSummary.textContent = selected.length + ' fleets selected';
+      }
+    }
+
     function toggleDayOfWeekVisibility() {
       subDayWrapper.style.display = (subFrequencySelect.value === 'weekly') ? '' : 'none';
     }
@@ -527,7 +579,12 @@
       document.getElementById('subscription-modal-title').textContent =
         sub ? 'Edit Email Subscription' : 'New Email Subscription';
       document.getElementById('sub-id').value = sub ? sub.id : '';
-      document.getElementById('sub-fleet-type').value = sub ? sub.fleet_type : '';
+
+      var selectedFleets = sub ? (sub.fleet_types || (sub.fleet_type || '').split(',').filter(Boolean)) : [];
+      document.querySelectorAll('.sub-fleet-type-checkbox').forEach(function (cb) {
+        cb.checked = selectedFleets.indexOf(cb.value) !== -1;
+      });
+      updateFleetSummary();
 
       var selectedTypes = sub ? (sub.alert_types || (sub.alert_type || '').split(',')) : [];
       document.querySelectorAll('.sub-alert-type-checkbox').forEach(function (cb) {
@@ -539,11 +596,13 @@
       document.getElementById('sub-run-time').value = sub ? sub.run_time : '08:00';
       document.getElementById('sub-email').value = sub ? sub.email : '';
       toggleDayOfWeekVisibility();
+      fleetPanel.classList.add('hidden');
       subModal.classList.remove('hidden');
     }
 
     function closeSubscriptionModal() {
       subModal.classList.add('hidden');
+      fleetPanel.classList.add('hidden');
       subForm.reset();
     }
 
@@ -556,14 +615,24 @@
       fetch('/api/fleet-types')
         .then(function (r) { return r.json(); })
         .then(function (data) {
-          var select = document.getElementById('sub-fleet-type');
-          var current = select.value;
+          var current = getSelectedFleets();
           var fleets = data.fleets || [];
-          select.innerHTML = '<option value="">Select fleet…</option>' +
-            fleets.map(function (f) {
-              return '<option value="' + f + '">' + f + '</option>';
-            }).join('');
-          if (current) select.value = current;
+          if (fleets.length === 0) {
+            fleetPanel.innerHTML = '<div class="multiselect-empty">No fleets found.</div>';
+            return;
+          }
+          fleetPanel.innerHTML = fleets.map(function (f) {
+            return '<label class="multiselect-option">' +
+              '<input type="checkbox" class="sub-fleet-type-checkbox" value="' + f + '"> ' +
+              f +
+              '</label>';
+          }).join('');
+          if (current.length) {
+            document.querySelectorAll('.sub-fleet-type-checkbox').forEach(function (cb) {
+              cb.checked = current.indexOf(cb.value) !== -1;
+            });
+          }
+          updateFleetSummary();
         })
         .catch(function (e) { console.error('Failed to load fleet types', e); });
     }
@@ -589,8 +658,10 @@
             var activeLabel = s.active ? '✅' : '⏸️';
             var types = s.alert_types || (s.alert_type || '').split(',').filter(Boolean);
             var alertTypeLabel = types.map(function (t) { return alertLabels[t] || t; }).join(', ');
+            var fleets = s.fleet_types || (s.fleet_type || '').split(',').filter(Boolean);
+            var fleetTypeLabel = fleets.join(', ');
             return '<tr>' +
-              '<td>' + escapeHtml(s.fleet_type) + '</td>' +
+              '<td>' + escapeHtml(fleetTypeLabel) + '</td>' +
               '<td>' + alertTypeLabel + '</td>' +
               '<td>' + (frequencyLabels[s.frequency] || s.frequency) + '</td>' +
               '<td>' + dayLabel + '</td>' +
@@ -631,9 +702,15 @@
         return;
       }
 
+      var selectedFleets = getSelectedFleets();
+      if (selectedFleets.length === 0) {
+        showToast('Select at least one fleet type.', true);
+        return;
+      }
+
       var id = document.getElementById('sub-id').value;
       var payload = {
-        fleet_type: document.getElementById('sub-fleet-type').value,
+        fleet_type: selectedFleets,
         alert_type: selectedAlertTypes,
         frequency: document.getElementById('sub-frequency').value,
         day_of_week: document.getElementById('sub-day-of-week').value,

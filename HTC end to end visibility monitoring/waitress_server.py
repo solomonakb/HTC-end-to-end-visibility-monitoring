@@ -561,17 +561,21 @@ def send_subscription_now(sub_id):
             return jsonify({"error": "Subscription not found", "success": False}), 404
 
         alert_types = sub.get("alert_types") or [a for a in (sub.get("alert_type") or "").split(",") if a]
+        fleets = sub.get("fleet_types") or [f for f in (sub.get("fleet_type") or "").split(",") if f]
+        fleet_label = ", ".join(fleets)
         total_rows = 0
         failures = []
 
         for alert_type in alert_types:
-            if alert_type == "ALERT_B":
-                rows = database.get_alert_b_events(DB_PATH, fleet=sub.get("fleet_type"))
-            else:
-                rows = database.get_mmc_alerts(DB_PATH, fleet=sub.get("fleet_type"))
+            rows = []
+            for fleet in fleets:
+                if alert_type == "ALERT_B":
+                    rows.extend(database.get_alert_b_events(DB_PATH, fleet=fleet))
+                else:
+                    rows.extend(database.get_mmc_alerts(DB_PATH, fleet=fleet))
 
             ok, msg = htc_email.send_subscription_digest(
-                DB_PATH, to_email=sub.get("email"), fleet_type=sub.get("fleet_type"),
+                DB_PATH, to_email=sub.get("email"), fleet_type=fleet_label,
                 alert_type=alert_type, rows=rows,
             )
             if ok:

@@ -87,27 +87,39 @@ def _rows_for_alert_type(db_path: str, fleet: str, alert_type: str):
         return database.get_mmc_alerts(db_path, fleet=fleet)
 
 
+def _rows_for_fleets(db_path: str, fleets: list, alert_type: str):
+    """Collects rows for every selected fleet type and combines them into a
+    single list for one digest email."""
+    rows = []
+    for fleet in fleets:
+        rows.extend(_rows_for_alert_type(db_path, fleet, alert_type))
+    return rows
+
+
 def _run_subscription(db_path: str, sub: dict):
     alert_types = sub.get("alert_types") or [
         a for a in (sub.get("alert_type") or "").split(",") if a
     ]
-    fleet = sub.get("fleet_type")
+    fleets = sub.get("fleet_types") or [
+        f for f in (sub.get("fleet_type") or "").split(",") if f
+    ]
+    fleet_label = ", ".join(fleets)
     any_failed = False
 
     for alert_type in alert_types:
         try:
-            rows = _rows_for_alert_type(db_path, fleet, alert_type)
+            rows = _rows_for_fleets(db_path, fleets, alert_type)
             ok, msg = htc_email.send_subscription_digest(
                 db_path,
                 to_email=sub.get("email"),
-                fleet_type=fleet,
+                fleet_type=fleet_label,
                 alert_type=alert_type,
                 rows=rows,
             )
             if ok:
                 logger.info(
-                    "Subscription #%s digest sent to %s (fleet=%s, alert=%s, rows=%d).",
-                    sub["id"], sub.get("email"), fleet, alert_type, len(rows),
+                    "Subscription #%s digest sent to %s (fleets=%s, alert=%s, rows=%d).",
+                    sub["id"], sub.get("email"), fleet_label, alert_type, len(rows),
                 )
             else:
                 any_failed = True

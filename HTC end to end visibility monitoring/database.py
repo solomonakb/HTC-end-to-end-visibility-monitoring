@@ -847,7 +847,7 @@ def get_subscriptions(db_path, active_only=False):
     cursor.execute(query)
     rows = cursor.fetchall()
     conn.close()
-    return [_expand_alert_types(r) for r in rows]
+    return [_expand_fleet_types(_expand_alert_types(r)) for r in rows]
 
 
 def get_subscription(db_path, sub_id):
@@ -857,7 +857,46 @@ def get_subscription(db_path, sub_id):
     cursor.execute("SELECT * FROM email_subscriptions WHERE id = ?", (sub_id,))
     row = cursor.fetchone()
     conn.close()
-    return _expand_alert_types(row) if row else row
+    return _expand_fleet_types(_expand_alert_types(row)) if row else row
+
+
+def _serialize_fleet_types(fleet_type_input):
+    """Accepts either a list of fleet types or a single string/comma-separated
+    string, dedupes while preserving order, and returns a comma-separated
+    string for storage. Fleet types are open-ended (sourced from event data),
+    so unlike alert types there's no fixed allow-list to validate against."""
+    if fleet_type_input is None:
+        raw_list = []
+    elif isinstance(fleet_type_input, (list, tuple, set)):
+        raw_list = list(fleet_type_input)
+    else:
+        raw_list = str(fleet_type_input).split(",")
+
+    seen = set()
+    cleaned = []
+    for item in raw_list:
+        val = str(item).strip()
+        if not val:
+            continue
+        if val not in seen:
+            seen.add(val)
+            cleaned.append(val)
+
+    if not cleaned:
+        raise ValueError("At least one fleet_type is required.")
+
+    return ",".join(cleaned)
+
+
+def _expand_fleet_types(row):
+    """Adds a 'fleet_types' list field (parsed from the stored comma-separated
+    'fleet_type' string) onto a subscription row dict for easier frontend use,
+    while keeping 'fleet_type' as the raw stored string for backward compat."""
+    if row and row.get("fleet_type"):
+        row["fleet_types"] = [f for f in row["fleet_type"].split(",") if f]
+    elif row is not None:
+        row["fleet_types"] = []
+    return row
 
 
 def _serialize_alert_types(alert_type_input):
@@ -903,22 +942,23 @@ def _expand_alert_types(row):
 def create_subscription(db_path, data):
     """Create a new email subscription.
 
-    Required keys: fleet_type, alert_type (list of one or more of
-    'ALERT_B'/'ALERT_C', or a comma-separated string — also accepts the key
-    'alert_types' as an alias), frequency ('every_3_days'|'weekly'), run_time
-    ('HH:MM'), email. day_of_week required when frequency == 'weekly'.
+    Required keys: fleet_type (list of one or more fleet types, or a
+    comma-separated string — also accepts the key 'fleet_types' as an alias),
+    alert_type (list of one or more of 'ALERT_B'/'ALERT_C', or a
+    comma-separated string — also accepts the key 'alert_types' as an alias),
+    frequency ('every_3_days'|'weekly'), run_time ('HH:MM'), email.
+    day_of_week required when frequency == 'weekly'.
 
     Returns the created row dict, or raises ValueError on invalid input.
     """
-    fleet_type = (data.get("fleet_type") or "").strip()
+    fleet_type_input = data.get("fleet_type", data.get("fleet_types"))
     alert_type_input = data.get("alert_type", data.get("alert_types"))
     frequency = (data.get("frequency") or "").strip().lower()
     day_of_week = (data.get("day_of_week") or "").strip().lower() or None
     run_time = (data.get("run_time") or "").strip()
     email = (data.get("email") or "").strip().lower()
 
-    if not fleet_type:
-        raise ValueError("fleet_type is required.")
+    fleet_type = _serialize_fleet_types(fleet_type_input)
     alert_type = _serialize_alert_types(alert_type_input)
     if frequency not in _VALID_FREQUENCIES:
         raise ValueError("frequency must be 'every_3_days' or 'weekly'.")
@@ -944,7 +984,7 @@ def create_subscription(db_path, data):
     cursor.execute("SELECT * FROM email_subscriptions WHERE id = ?", (sub_id,))
     row = cursor.fetchone()
     conn.close()
-    return _expand_alert_types(row)
+    return _expand_fleet_types(_expand_alert_types(row))
 
 
 def update_subscription(db_path, sub_id, data):
@@ -957,10 +997,8 @@ def update_subscription(db_path, sub_id, data):
     set_clauses = []
     params = []
 
-    if "fleet_type" in data:
-        val = (data.get("fleet_type") or "").strip()
-        if not val:
-            raise ValueError("fleet_type cannot be empty.")
+    if "fleet_type" in data or "fleet_types" in data:
+        val = _serialize_fleet_types(data.get("fleet_type", data.get("fleet_types")))
         set_clauses.append("fleet_type = ?")
         params.append(val)
 
@@ -1021,7 +1059,7 @@ def update_subscription(db_path, sub_id, data):
     cursor.execute("SELECT * FROM email_subscriptions WHERE id = ?", (sub_id,))
     row = cursor.fetchone()
     conn.close()
-    return _expand_alert_types(row)
+    return _expand_fleet_types(_expand_alert_types(row))
 
 
 def delete_subscription(db_path, sub_id):
