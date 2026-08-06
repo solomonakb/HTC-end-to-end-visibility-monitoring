@@ -166,24 +166,55 @@ def scan_share_directory(share_path):
     Returns a list of (filename, full_path, parsed_timestamp) tuples, sorted latest first.
     """
     results = []
+
+    # os.path.isdir() on a UNC path swallows the real error and just returns
+    # False for EVERY failure mode (path doesn't exist, DNS/name resolution
+    # failure, access denied, no network credentials, share offline, etc).
+    # Try listdir() directly first so we can log *which* WinError we hit —
+    # that's almost always the fastest way to diagnose "files are clearly
+    # there but the app says none were found".
     try:
-        if os.path.isdir(share_path):
-            logger.info(f"scan_share_directory: '{share_path}' is a valid directory. Scanning...")
-            files = os.listdir(share_path)
-            logger.info(f"scan_share_directory: Found {len(files)} items.")
-            for entry in files:
-                lower_entry = entry.lower()
-                if (lower_entry.endswith('.xlsx') or lower_entry.endswith('.xls')) and not entry.startswith('~$'):
-                    filepath = os.path.join(share_path, entry)
-                    dt = parse_filename_timestamp(entry, filepath)
-                    results.append((entry, filepath, dt))
-            # Sort by timestamp, latest first
-            results.sort(key=lambda x: x[2], reverse=True)
-            logger.info(f"scan_share_directory: Returning {len(results)} valid excel files.")
-        else:
-            logger.warning(f"scan_share_directory: '{share_path}' is NOT a directory or not accessible.")
+        entries = os.listdir(share_path)
+    except FileNotFoundError as e:
+        logger.error(
+            f"scan_share_directory: '{share_path}' not found or unreachable "
+            f"(server name doesn't resolve, or path is wrong). Detail: {e}"
+        )
+        return results
+    except PermissionError as e:
+        logger.error(
+            f"scan_share_directory: Access denied to '{share_path}'. This "
+            f"usually means the account this app runs under (e.g. a Windows "
+            f"service or scheduled task running as LocalSystem/a service "
+            f"account) has no credentials for the share, even though your "
+            f"own interactive login can browse it fine. Detail: {e}"
+        )
+        return results
+    except OSError as e:
+        # Covers things like WinError 53 (network path not found),
+        # WinError 1219 (multiple connections to a server/share not
+        # allowed - happens if something else already connected with
+        # different credentials), etc. winerror is Windows-only.
+        winerror = getattr(e, 'winerror', None)
+        logger.error(
+            f"scan_share_directory: OS error accessing '{share_path}' "
+            f"(winerror={winerror}). Detail: {e}", exc_info=True
+        )
+        return results
     except Exception as e:
-        logger.error(f"Error scanning share: {e}", exc_info=True)
+        logger.error(f"scan_share_directory: Unexpected error accessing '{share_path}': {e}", exc_info=True)
+        return results
+
+    logger.info(f"scan_share_directory: '{share_path}' is accessible. Found {len(entries)} items.")
+    for entry in entries:
+        lower_entry = entry.lower()
+        if (lower_entry.endswith('.xlsx') or lower_entry.endswith('.xls')) and not entry.startswith('~$'):
+            filepath = os.path.join(share_path, entry)
+            dt = parse_filename_timestamp(entry, filepath)
+            results.append((entry, filepath, dt))
+    # Sort by timestamp, latest first
+    results.sort(key=lambda x: x[2], reverse=True)
+    logger.info(f"scan_share_directory: Returning {len(results)} valid excel files (out of {len(entries)} total items).")
     return results
 
 def get_loaded_files(db_path):

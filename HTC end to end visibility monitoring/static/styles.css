@@ -712,18 +712,27 @@ tbody tr:last-child td {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lg);
   padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 2px 8px;
 }
 
 .multiselect-option {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0.5rem 0.25rem;
+  padding: 0.4rem 0.35rem;
   font-size: 0.875rem;
   font-weight: 400;
   color: var(--text-primary);
   cursor: pointer;
   border-radius: var(--border-radius);
+  white-space: nowrap;
+}
+
+.multiselect-option input[type="checkbox"] {
+  flex: none;
+  margin: 0;
 }
 
 .multiselect-option:hover {
@@ -731,6 +740,7 @@ tbody tr:last-child td {
 }
 
 .multiselect-empty {
+  grid-column: 1 / -1;
   padding: 0.5rem 0.25rem;
   font-size: 0.875rem;
   opacity: 0.6;
